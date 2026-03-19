@@ -1,0 +1,42 @@
+[
+  {
+    "id": "INC-4757",
+    "goal": "Analyze all the issues and tell the solution for them",
+    "detected_issue": "Slow Response Time and High CPU usage on Kubernetes nodes are causing issues in Customer Support, Recommendation Engine, and API Gateway services.",
+    "root_cause": "Insufficient monitoring and alerting mechanisms to detect and respond to these issues promptly.",
+    "severity": "High",
+    "recommended_action": "Implement real-time monitoring and alerting systems to detect anomalies and trigger automated responses. Conduct regular performance tuning and capacity planning for Kubernetes nodes.",
+    "timestamp": "2026-03-19T15:01:29.124163",
+    "duration": 615.5897309780121
+  },
+  {
+    "id": "INC-7496",
+    "goal": "analyze",
+    "detected_issue": "Delivery issues and Customer support unresponsiveness are affecting business operations.",
+    "root_cause": "Database connection timeouts and High CPU usage on Kubernetes nodes are causing these issues.",
+    "severity": "High",
+    "recommended_action": "Investigate the root causes, optimize database connections, and monitor CPU usage to prevent further disruptions.",
+    "timestamp": "2026-03-19T14:07:47.868895",
+    "duration": 468.7619614601135
+  },
+  {
+    "id": "INC-5341",
+    "goal": "Describe the issue and suggest actions to be taken .",
+    "detected_issue": "Refund delays and customer support unresponsiveness are causing significant issues.",
+    "root_cause": "Inefficient ticket resolution process and inadequate staffing in the Customer Support department.",
+    "severity": "High",
+    "recommended_action": "Implement a new ticket prioritization system to ensure timely resolutions, and hire additional staff to reduce wait times.",
+    "timestamp": "2026-03-19T13:48:44.046408",
+    "duration": 858.750946521759
+  },
+  {
+    "id": "INC-8996",
+    "goal": "Describe all the issues.",
+    "detected_issue": "Failed to parse analysis from LLM.",
+    "root_cause": "Unknown",
+    "severity": "Unknown",
+    "recommended_action": "Check system logs manually.",
+    "timestamp": "2026-03-19T12:59:34.505814",
+    "duration": 1019.0679359436035
+  }
+]
