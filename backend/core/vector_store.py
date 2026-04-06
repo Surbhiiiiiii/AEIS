@@ -2,23 +2,30 @@ import faiss
 import numpy as np
 import os
 import json
-from sentence_transformers import SentenceTransformer
 
 class VectorStore:
     def __init__(self, index_file="data/vector_index.faiss", metadata_file="data/vector_metadata.json", model_name='all-MiniLM-L6-v2'):
         self.index_file = index_file
         self.metadata_file = metadata_file
+        self.model_name = model_name
         self.dimension = 384
-        try:
-            self.model = SentenceTransformer(model_name)
-            self.dimension = self.model.get_sentence_embedding_dimension()
-        except Exception as e:
-            print(f"Warning: SentenceTransformer '{model_name}' failed to load ({e}). Using lightweight randomized fallback vectors.")
-            self.model = None
+        self._model = None  # Lazy-loaded on first use
 
         self.index = None
         self.metadata = []
         self._load_or_create_index()
+
+    def _get_model(self):
+        """Lazy-loads the SentenceTransformer model only when first needed."""
+        if self._model is None:
+            try:
+                from sentence_transformers import SentenceTransformer
+                self._model = SentenceTransformer(self.model_name)
+                self.dimension = self._model.get_sentence_embedding_dimension()
+            except Exception as e:
+                print(f"Warning: SentenceTransformer '{self.model_name}' failed to load ({e}). Using fallback random vectors.")
+                self._model = False  # Mark as failed so we don't retry repeatedly
+        return self._model if self._model is not False else None
 
     def _load_or_create_index(self):
         os.makedirs(os.path.dirname(self.index_file), exist_ok=True)
@@ -47,8 +54,9 @@ class VectorStore:
             raise ValueError("Length of texts must match length of source_metadata")
 
         # Create embeddings
-        if self.model:
-            embeddings = self.model.encode(texts)
+        model = self._get_model()
+        if model:
+            embeddings = model.encode(texts)
             embeddings = np.array(embeddings).astype('float32')
         else:
             embeddings = np.random.rand(len(texts), self.dimension).astype('float32')
@@ -69,8 +77,9 @@ class VectorStore:
             return []
             
         # Create embedding for query
-        if self.model:
-            query_embedding = self.model.encode([query])
+        model = self._get_model()
+        if model:
+            query_embedding = model.encode([query])
             query_embedding = np.array(query_embedding).astype('float32')
         else:
             query_embedding = np.random.rand(1, self.dimension).astype('float32')

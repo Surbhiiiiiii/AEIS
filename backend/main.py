@@ -108,6 +108,7 @@ ALLOWED_INGEST_EXTENSIONS = {".csv", ".json", ".xlsx", ".xls", ".pdf", ".txt", "
 async def auto_ingest_watcher():
     incoming_dir = os.path.join(os.path.dirname(__file__), 'data', 'incoming_logs')
     os.makedirs(incoming_dir, exist_ok=True)
+    await asyncio.sleep(30)  # Wait for app to fully start before first scan
     while True:
         try:
             for filename in os.listdir(incoming_dir):
