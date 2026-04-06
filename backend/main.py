@@ -53,13 +53,21 @@ app = FastAPI(title="Enterprise AI Platform", version="2.0.0")
 # ── CORS ─────────────────────────────────────────────────────────────────────
 # Set ALLOWED_ORIGINS in .env as a comma-separated list of allowed frontend URLs.
 # Example: ALLOWED_ORIGINS=http://localhost:3000,https://my-app.vercel.app
-_raw_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000")
-_allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+# Leave unset (or use *) to allow all origins (fine for demo/dev deployments).
+_raw_origins = os.getenv("ALLOWED_ORIGINS", "").strip()
+
+if not _raw_origins or _raw_origins == "*":
+    # Open CORS — allow all origins. Must NOT use allow_credentials=True with wildcard.
+    _allowed_origins = ["*"]
+    _allow_credentials = False
+else:
+    _allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+    _allow_credentials = True
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_allowed_origins,
-    allow_credentials=True,
+    allow_credentials=_allow_credentials,
     allow_methods=["*"],
     allow_headers=["*"],
 )
