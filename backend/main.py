@@ -512,3 +512,9 @@ async def update_user_role(username: str, body: UpdateRoleRequest, current_user:
         raise
     except Exception as e:
         raise HTTPException(500, str(e))
+import os
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
