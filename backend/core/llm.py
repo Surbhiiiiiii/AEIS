@@ -6,7 +6,7 @@ from groq import Groq
 # Groq client — reads GROQ_API_KEY from environment
 # ---------------------------------------------------------------------------
 _client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-MODEL = "llama3-8b-8192"
+MODEL = "llama-3.1-8b-instant"
 
 
 def query_llm(prompt: str) -> str:
