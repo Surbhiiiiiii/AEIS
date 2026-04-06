@@ -66,21 +66,22 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
+    # Return immediately so uvicorn can respond to health checks / port probes.
+    # All blocking work is deferred to a background task.
+    asyncio.create_task(_deferred_startup())
+
+async def _deferred_startup():
+    """Run all startup work in the background so the event loop stays responsive."""
+    await asyncio.sleep(1)  # yield to let uvicorn finish binding
+
     try:
-        ensure_indexes()
+        await asyncio.to_thread(ensure_indexes)
         print("[DB] MongoDB indexes ensured.")
     except Exception as e:
         print(f"[DB] MongoDB not available: {e}. System will continue with limited functionality.")
 
-    try:
-        asyncio.create_task(auto_ingest_watcher())
-    except Exception as e:
-        print(f"[Startup Error - auto_ingest_watcher] {e}")
-
-    try:
-        asyncio.create_task(seed_admin_user())
-    except Exception as e:
-        print(f"[Startup Error - seed_admin_user] {e}")
+    asyncio.create_task(auto_ingest_watcher())
+    asyncio.create_task(seed_admin_user())
 
 async def seed_admin_user():
     """Create default admin account if no admin exists."""
