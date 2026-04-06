@@ -72,8 +72,15 @@ async def startup_event():
     except Exception as e:
         print(f"[DB] MongoDB not available: {e}. System will continue with limited functionality.")
 
-    asyncio.create_task(auto_ingest_watcher())
-    asyncio.create_task(seed_admin_user())
+    try:
+        asyncio.create_task(auto_ingest_watcher())
+    except Exception as e:
+        print(f"[Startup Error - auto_ingest_watcher] {e}")
+
+    try:
+        asyncio.create_task(seed_admin_user())
+    except Exception as e:
+        print(f"[Startup Error - seed_admin_user] {e}")
 
 async def seed_admin_user():
     """Create default admin account if no admin exists."""
