@@ -16,7 +16,7 @@ from collections import deque
 
 from core.orchestrator import run_enterprise_system
 from core.memory import Memory
-from core.database import users_col, investigations_col, alerts_col, ensure_indexes
+from core.database import users_col, investigations_col, alerts_col, ensure_indexes, db_health_check, reset_client
 from core.auth import (
     hash_password, verify_password, create_jwt, get_current_user,
     generate_otp, verify_otp, send_otp_email
@@ -147,6 +147,20 @@ async def track_requests(request: Request, call_next):
         request_times.popleft()
     return await call_next(request)
 
+@app.get("/health")
+async def health_check():
+    """Quick liveness + DB reachability probe. Safe to call without auth."""
+    db_status = await asyncio.to_thread(db_health_check)
+    status_code = 200 if db_status["ok"] else 503
+    from fastapi.responses import JSONResponse
+    return JSONResponse(
+        status_code=status_code,
+        content={
+            "status": "online",
+            "database": db_status,
+        }
+    )
+
 # ── Static ────────────────────────────────────────────────────────────────────
 @app.get("/")
 def root():
@@ -225,6 +239,7 @@ async def register(body: RegisterRequest):
     except HTTPException:
         raise
     except Exception as e:
+        reset_client()  # force fresh connection on next request
         raise HTTPException(503, f"Database unavailable: {str(e)}")
 
     # Create user (unverified)
