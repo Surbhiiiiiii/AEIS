@@ -26,38 +26,57 @@ class PlannerAgent:
         """
         Retrieves past investigations and successful strategies from MongoDB
         and formats them as a context block for the LLM prompt.
+        Filters out stale infrastructure-error entries (Ollama timeouts, LLM
+        unavailability) so they don't pollute future plans.
         """
         if not self.memory:
             return ""
 
+        # Keywords that indicate a stale/infra-error investigation — exclude these
+        _stale = {"ollama", "llm unavailable", "timeout", "offline", "groq api error",
+                  "llama", "model not found", "decommissioned"}
+
+        def _is_stale(text: str) -> bool:
+            t = str(text).lower()
+            return any(kw in t for kw in _stale)
+
         lines = []
 
         # ── Past investigations (failures + successes) ──────────────────────
-        past = self.memory.get_past_investigations(limit=5)
+        past = self.memory.get_past_investigations(limit=10)
         if past:
-            lines.append("=== Past Investigations (most recent first) ===")
-            for p in past:
-                critic_score = p.get("critic_score", "N/A")
-                quality = "✓ SUCCESS" if float(critic_score or 0) >= 0.7 else "✗ NEEDS IMPROVEMENT"
-                lines.append(
-                    f"- Goal: {p.get('goal', 'N/A')} | "
-                    f"Issue: {p.get('detected_issue', 'N/A')} | "
-                    f"Severity: {p.get('severity', 'N/A')} | "
-                    f"Action: {p.get('recommended_action', 'N/A')} | "
-                    f"Score: {critic_score} ({quality})"
-                )
+            valid = [
+                p for p in past
+                if not _is_stale(p.get("detected_issue", ""))
+                and not _is_stale(p.get("recommended_action", ""))
+            ][:5]
+            if valid:
+                lines.append("=== Past Investigations (most recent first) ===")
+                for p in valid:
+                    critic_score = p.get("critic_score", "N/A")
+                    quality = "✓ SUCCESS" if float(critic_score or 0) >= 0.7 else "✗ NEEDS IMPROVEMENT"
+                    lines.append(
+                        f"- Goal: {p.get('goal', 'N/A')} | "
+                        f"Issue: {p.get('detected_issue', 'N/A')} | "
+                        f"Severity: {p.get('severity', 'N/A')} | "
+                        f"Action: {p.get('recommended_action', 'N/A')} | "
+                        f"Score: {critic_score} ({quality})"
+                    )
 
         # ── Successful strategies to reuse ──────────────────────────────────
         strategies = self.memory.get_successful_strategies(min_score=0.7, limit=3)
         if strategies:
-            lines.append("\n=== High-Scoring Strategies (reuse these when applicable) ===")
-            for s in strategies:
-                lines.append(
-                    f"- Strategy for '{s.get('goal', 'N/A')}': "
-                    f"{s.get('strategy_used', 'N/A')} | Score: {s.get('critic_score', 'N/A')}"
-                )
+            valid_s = [s for s in strategies if not _is_stale(s.get("strategy_used", ""))]
+            if valid_s:
+                lines.append("\n=== High-Scoring Strategies (reuse these when applicable) ===")
+                for s in valid_s:
+                    lines.append(
+                        f"- Strategy for '{s.get('goal', 'N/A')}': "
+                        f"{s.get('strategy_used', 'N/A')} | Score: {s.get('critic_score', 'N/A')}"
+                    )
 
         return "\n".join(lines) if lines else ""
+
 
     def plan(self, goal: str, context: dict = None) -> dict:
         """

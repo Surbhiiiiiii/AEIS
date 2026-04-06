@@ -425,7 +425,8 @@ async def get_dashboard(current_user: dict = Depends(get_current_user)):
 
     _stop_words = {"the", "a", "an", "is", "are", "was", "of", "in", "at", "by", "to",
                    "and", "or", "not", "no", "for", "on", "with", "this", "that",
-                   "ollama", "offline", "timeout", "system", "backend"}
+                   "ollama", "offline", "timeout", "system", "backend",
+                   "llm", "unavailable", "groq", "data", "error", "available", "determine"}
     dist_counts = {}
     for h in history_data:
         raw = str(h.get("root_cause", "System"))
@@ -519,6 +520,17 @@ async def get_agent_performance(current_user: dict = Depends(get_current_user)):
         return records
     except Exception as e:
         raise HTTPException(500, f"Could not fetch performance records: {e}")
+
+@app.delete("/admin/clear-alerts")
+async def clear_all_alerts(current_user: dict = Depends(get_current_user)):
+    """Delete all alerts from the database (admin only). Useful to clear stale pre-migration alerts."""
+    if current_user.get("role") != "admin":
+        raise HTTPException(403, "Admin access required")
+    try:
+        result = alerts_col().delete_many({})
+        return {"message": f"Cleared {result.deleted_count} alert(s) successfully."}
+    except Exception as e:
+        raise HTTPException(500, f"Failed to clear alerts: {e}")
 
 @app.get("/admin/users")
 async def get_admin_users(current_user: dict = Depends(get_current_user)):

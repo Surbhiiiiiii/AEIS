@@ -37,8 +37,8 @@ class AnalystAgent:
             "major_issue": "Analysis could not be parsed from model response.",
             "root_cause": "Model response format error",
             "severity": "Medium",
-            "recommended_action": "Retry with a cleaner dataset or verify the LLM is running.",
-            "insights": ["LLM response was not valid JSON — check Ollama/model status."]
+            "recommended_action": "Retry with a cleaner dataset or verify the LLM API key is configured.",
+            "insights": ["LLM response was not valid JSON — check your GROQ_API_KEY on Render."]
         }
 
     def analyze(self, plan, custom_data=None, url=None):
@@ -50,18 +50,15 @@ class AnalystAgent:
         if not isinstance(tasks, list):
             tasks = [str(tasks)]
 
-        # ── 1. Guard: require real data ────────────────────────────────────
+        # ── 1. Guard: require real data or a meaningful goal ──────────────
         if not custom_data and not url:
-            return {
-                "analysis_data": {
-                    "major_issue": "No data provided for analysis.",
-                    "root_cause": "Neither a dataset nor a URL was supplied.",
-                    "severity": "Low",
-                    "recommended_action": "Upload a CSV/Excel/JSON/PDF file or provide a URL to analyse.",
-                    "insights": ["Please supply a dataset or URL to enable data-driven analysis."]
-                },
-                "analysis_text": ""
+            # Use the goal text itself as content to give a meaningful analysis
+            custom_data = {
+                "type": "text",
+                "data": [goal],
+                "stats": {"total_rows": 1, "columns": []}
             }
+            messages = [goal]
 
         # ── 2. Build structured data summary (pre-LLM) ────────────────────
         if custom_data and isinstance(custom_data, dict):
