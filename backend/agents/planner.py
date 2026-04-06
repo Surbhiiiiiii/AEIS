@@ -1,5 +1,16 @@
+"""
+PlannerAgent — Memory-Driven Single-Pass Planner.
+
+On each invocation:
+  1. Retrieves past investigations (failures & successes) from MongoDB.
+  2. Retrieves high-scoring strategies to reuse proven approaches.
+  3. Uses this historical context to generate a smarter task plan via LLM.
+
+Does NOT re-plan within a single request.
+"""
 import json
 from core.llm import query_llm
+
 
 class PlannerAgent:
     def __init__(self, memory=None):
@@ -11,76 +22,87 @@ class PlannerAgent:
             return self.memory.get_prompt("PlannerAgent", default)
         return default
 
-    def plan(self, goal: str, context: dict = None):
+    def _build_memory_context(self) -> str:
         """
-        Converts enterprise goal into structured task plan using LLM.
+        Retrieves past investigations and successful strategies from MongoDB
+        and formats them as a context block for the LLM prompt.
+        """
+        if not self.memory:
+            return ""
+
+        lines = []
+
+        # ── Past investigations (failures + successes) ──────────────────────
+        past = self.memory.get_past_investigations(limit=5)
+        if past:
+            lines.append("=== Past Investigations (most recent first) ===")
+            for p in past:
+                critic_score = p.get("critic_score", "N/A")
+                quality = "✓ SUCCESS" if float(critic_score or 0) >= 0.7 else "✗ NEEDS IMPROVEMENT"
+                lines.append(
+                    f"- Goal: {p.get('goal', 'N/A')} | "
+                    f"Issue: {p.get('detected_issue', 'N/A')} | "
+                    f"Severity: {p.get('severity', 'N/A')} | "
+                    f"Action: {p.get('recommended_action', 'N/A')} | "
+                    f"Score: {critic_score} ({quality})"
+                )
+
+        # ── Successful strategies to reuse ──────────────────────────────────
+        strategies = self.memory.get_successful_strategies(min_score=0.7, limit=3)
+        if strategies:
+            lines.append("\n=== High-Scoring Strategies (reuse these when applicable) ===")
+            for s in strategies:
+                lines.append(
+                    f"- Strategy for '{s.get('goal', 'N/A')}': "
+                    f"{s.get('strategy_used', 'N/A')} | Score: {s.get('critic_score', 'N/A')}"
+                )
+
+        return "\n".join(lines) if lines else ""
+
+    def plan(self, goal: str, context: dict = None) -> dict:
+        """
+        Generates a structured task plan using LLM, informed by historical memory.
+        Single-pass — called exactly once per investigation.
         """
         system_prompt = self._get_prompt()
         context_str = json.dumps(context) if context else "None"
-        
-        prompt = f"""
-{system_prompt}
+        memory_context = self._build_memory_context()
+
+        memory_section = (
+            f"\n\n{memory_context}\n\nUse the above history to avoid repeating past failures "
+            "and to reuse successful strategies where appropriate."
+            if memory_context
+            else ""
+        )
+
+        prompt = f"""{system_prompt}
 
 Goal: {goal}
-Context: {context_str}
+Context: {context_str}{memory_section}
 
 Output ONLY a JSON array of strings representing the sequential tasks. Do not output markdown backticks or explaining text.
-Example: ["Task 1", "Task 2"]
+Example: ["Task 1", "Task 2", "Task 3"]
 """
         response = query_llm(prompt)
-        
+
         try:
             tasks = json.loads(response)
             if not isinstance(tasks, list):
-               tasks = ["Analyze goal", "Extract insights", "Recommend action"] 
+                tasks = ["Analyze goal", "Extract insights", "Recommend action"]
         except json.JSONDecodeError:
-            # Fallback if LLM fails to output clean JSON
-            tasks = [line.strip().strip('-* ') for line in response.split('\n') if line.strip() and len(line) > 3][:5]
+            tasks = [
+                line.strip().strip("-* ")
+                for line in response.split("\n")
+                if line.strip() and len(line) > 3
+            ][:5]
             if not tasks:
                 tasks = ["Analyze goal", "Extract insights", "Recommend action"]
 
         if self.memory:
-            self.memory.add_event("PlannerAgent", "Generated initial plan", {"goal": goal, "tasks": tasks})
+            self.memory.add_event(
+                "PlannerAgent",
+                "Generated memory-informed plan",
+                {"goal": goal, "tasks": tasks, "memory_used": bool(memory_context)},
+            )
 
-        return {
-            "goal": goal,
-            "tasks": tasks
-        }
-
-    def refine_plan(self, previous_plan, evaluation):
-        """Refines the plan based on critic's evaluation."""
-        system_prompt = self._get_prompt()
-        tasks = previous_plan.get("tasks", [])
-        goal = previous_plan.get("goal", "")
-        
-        if "Needs improvement" in evaluation.get("quality", ""):
-            prompt = f"""
-{system_prompt}
-
-Original Goal: {goal}
-Previous Plan: {json.dumps(tasks)}
-Critic Feedback: {json.dumps(evaluation)}
-
-The previous plan failed. Output ONLY a new JSON array of strings for a refined task plan.
-Do not output markdown backticks or explaining text.
-"""
-            response = query_llm(prompt)
-            try:
-                new_tasks = json.loads(response)
-                if isinstance(new_tasks, list):
-                    tasks = new_tasks
-            except json.JSONDecodeError:
-                new_tasks = [line.strip().strip('-* ') for line in response.split('\n') if line.strip() and len(line) > 3][:5]
-                if new_tasks:
-                   tasks = new_tasks
-            
-            if "Re-evaluate root cause deeply" not in tasks:
-                tasks.append("Re-evaluate root cause deeply")
-
-        if self.memory:
-            self.memory.add_event("PlannerAgent", "Refined plan", {"evaluation": evaluation, "tasks": tasks})
-            
-        return {
-            "goal": goal,
-            "tasks": tasks
-        }
+        return {"goal": goal, "tasks": tasks}

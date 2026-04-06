@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+
+# Environment — NEVER commit these
+backend/.env
+*.env.local
+
+# FAISS / ML data (can be large)
+backend/data/vector_index.faiss
+backend/data/vector_metadata.json
+
+# Node
+enterprise-dashboard/node_modules/
+enterprise-dashboard/build/
+
+# Misc
+*.log
+.DS_Store
+Thumbs.db

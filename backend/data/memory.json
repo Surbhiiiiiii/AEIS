@@ -1854,6 +1854,3634 @@
             "agent": "Orchestrator",
             "action": "Starting reasoning loop iteration 1",
             "details": {}
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "06bbf169-0cd8-4f48-8d12-618d4e0a68cd",
+                "goal": "Analyze endpoint",
+                "filename": null,
+                "url": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d"
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Analyze endpoint",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "5f401fa5-4a7c-42c0-b185-0a142b484041",
+                "goal": "Find the root cause of the failures in this CSV logs dataset",
+                "filename": "test_data.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Find the root cause of the failures in this CSV logs dataset",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "47d0a200-2cfe-439e-b0eb-e932f32270ee",
+                "goal": "analyze",
+                "filename": null,
+                "url": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d"
+            }
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [],
+                "keywords": [
+                    {
+                        "keyword": "{'id':",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'status':",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'message':",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'failed',",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "1,",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "'timeout",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "error'}",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "2,",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "'success',",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "'ok'}",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "3,",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "locked'}",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "1b573893-b89c-4e70-b5e9-4fb70fd08b7c",
+                "goal": "Analyze endpoint",
+                "filename": null,
+                "url": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d"
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "analyze",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Analyze endpoint",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Delivery issues",
+                    "Customer support unresponsiveness"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "unable",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "cpu",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "experiencing",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "502",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "after",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "login",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "search",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "{\"status\":\"success\",\"timestamp\":\"2026-03-19t10:30:00z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"inc-10234\",\"title\":\"database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connection",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "timeout\",\"description\":\"application",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "servers",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connect",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "postgresql",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "database.\",\"severity\":\"critical\",\"priority\":\"p1\",\"status\":\"open\",\"service\":\"customer",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "95dd5790-2e2d-401a-9a06-05f97c0693df",
+                "goal": "analyze",
+                "filename": null,
+                "url": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d"
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "analyze",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Delivery issues",
+                    "Customer support unresponsiveness"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "unable",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "cpu",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "experiencing",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "502",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "after",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "login",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "search",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "{\"status\":\"success\",\"timestamp\":\"2026-03-19t10:30:00z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"inc-10234\",\"title\":\"database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connection",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "timeout\",\"description\":\"application",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "servers",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connect",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "postgresql",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "database.\",\"severity\":\"critical\",\"priority\":\"p1\",\"status\":\"open\",\"service\":\"customer",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "Low",
+                "timestamp": "2026-03-19 21:54:22.189454"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 2",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Delivery issues",
+                    "Customer support unresponsiveness"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "unable",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "cpu",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "experiencing",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "502",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "after",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "login",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "search",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "{\"status\":\"success\",\"timestamp\":\"2026-03-19t10:30:00z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"inc-10234\",\"title\":\"database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connection",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "timeout\",\"description\":\"application",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "servers",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connect",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "postgresql",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "database.\",\"severity\":\"critical\",\"priority\":\"p1\",\"status\":\"open\",\"service\":\"customer",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "Low",
+                "timestamp": "2026-03-19 21:54:24.643570"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 3",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Delivery issues",
+                    "Customer support unresponsiveness"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "unable",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "cpu",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "experiencing",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "502",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "after",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "login",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "search",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "{\"status\":\"success\",\"timestamp\":\"2026-03-19t10:30:00z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"inc-10234\",\"title\":\"database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connection",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "timeout\",\"description\":\"application",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "servers",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connect",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "postgresql",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "database.\",\"severity\":\"critical\",\"priority\":\"p1\",\"status\":\"open\",\"service\":\"customer",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "Low",
+                "timestamp": "2026-03-19 21:54:25.980753"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "major_issue": "Pipeline Mock Test Successful",
+                "root_cause": "System Test Verified",
+                "severity": "Low",
+                "recommended_action": "None"
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "quality": "Good",
+                "feedback": "Mocked Plan success."
+            }
+        },
+        {
+            "agent": "Meta-PromptOptimization",
+            "action": "Optimized prompts",
+            "details": {
+                "PlannerAgent": "You are a highly analytical PlannerAgent. Ensure your task plans heavily prioritize data-driven root cause analysis and concrete, verifiable operational workflow steps. Output raw JSON arrays only.",
+                "AnalystAgent": "You are an expert enterprise risk AnalystAgent. Do not guess root causes; rely exclusively on the provided retrieved text context, trends, and keywords to deduce operational incidents. Be explicitly clear on data sources. Output plain text strictly following the specified format."
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 107
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Delivery issues",
+                    "Incident Pattern: Customer support unresponsiveness"
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Increase database connections, optimize network configuration, and monitor for potential bottlenecks",
+                "severity": "HIGH",
+                "timestamp": "2026-03-19 21:54:53.133855"
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "66172615-3ca3-4a56-9d43-f5ad82fed9ee",
+                "goal": "analyze",
+                "filename": null,
+                "url": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d"
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "analyze",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Delivery issues",
+                    "Customer support unresponsiveness"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "unable",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "cpu",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "experiencing",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "502",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "after",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "login",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "search",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "{\"status\":\"success\",\"timestamp\":\"2026-03-19t10:30:00z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"inc-10234\",\"title\":\"database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connection",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "timeout\",\"description\":\"application",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "servers",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connect",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "postgresql",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "database.\",\"severity\":\"critical\",\"priority\":\"p1\",\"status\":\"open\",\"service\":\"customer",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "Low",
+                "timestamp": "2026-03-19 21:55:00.624570"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 2",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Delivery issues",
+                    "Customer support unresponsiveness"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "unable",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "cpu",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "experiencing",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "502",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "after",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "login",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "search",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "{\"status\":\"success\",\"timestamp\":\"2026-03-19t10:30:00z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"inc-10234\",\"title\":\"database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connection",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "timeout\",\"description\":\"application",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "servers",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connect",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "postgresql",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "database.\",\"severity\":\"critical\",\"priority\":\"p1\",\"status\":\"open\",\"service\":\"customer",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "Low",
+                "timestamp": "2026-03-19 21:55:01.805288"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 3",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Delivery issues",
+                    "Customer support unresponsiveness"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "unable",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "cpu",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "experiencing",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "502",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "after",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "login",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "search",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "{\"status\":\"success\",\"timestamp\":\"2026-03-19t10:30:00z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"inc-10234\",\"title\":\"database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connection",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "timeout\",\"description\":\"application",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "servers",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "connect",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "postgresql",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "database.\",\"severity\":\"critical\",\"priority\":\"p1\",\"status\":\"open\",\"service\":\"customer",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "Low",
+                "timestamp": "2026-03-19 21:55:03.030625"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "major_issue": "Pipeline Mock Test Successful",
+                "root_cause": "System Test Verified",
+                "severity": "Low",
+                "recommended_action": "None"
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "quality": "Good",
+                "feedback": "Mocked Plan success."
+            }
+        },
+        {
+            "agent": "Meta-PromptOptimization",
+            "action": "Optimized prompts",
+            "details": {
+                "PlannerAgent": "You are a highly analytical PlannerAgent. Ensure your task plans heavily prioritize data-driven root cause analysis and concrete, verifiable operational workflow steps. Output raw JSON arrays only.",
+                "AnalystAgent": "You are an expert enterprise risk AnalystAgent. Do not guess root causes; rely exclusively on the provided retrieved text context, trends, and keywords to deduce operational incidents. Be explicitly clear on data sources. Output plain text strictly following the specified format."
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 130
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Delivery issues",
+                    "Incident Pattern: Customer support unresponsiveness"
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate and resolve database connection timeout issue, optimize CPU usage on Kubernetes nodes to prevent pod restarts",
+                "severity": "HIGH",
+                "timestamp": "2026-03-19 21:55:35.215069"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "Root cause accurately identified as insufficient database connections or network congestion, and recommended action is relevant to resolving the issue."
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "The analysis correctly identifies the major issue and its severity. The root cause is also well-identified as insufficient database connection and high CPU usage on Kubernetes nodes. The recommended action is specific, actionable, and aligned with the identified root causes."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.9,
+                "usefulness": 0.8,
+                "timeliness": 1.0,
+                "summary": "The session demonstrated good accuracy in identifying the root cause of the issue and providing a relevant recommended action. The usefulness is slightly lower due to the complexity of the issue requiring further optimization. Timeliness is high as the action was taken promptly."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.95,
+                "usefulness": 0.9,
+                "timeliness": 1.0,
+                "summary": "The session demonstrates high accuracy in identifying the major issue and its root cause, moderate usefulness in providing actionable recommendations, and timeliness as the action taken was done quickly."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Root Cause Analysis",
+                "description": "A structured approach to identify and resolve the root cause of failures in datasets by analyzing goal, extracting insights, and recommending relevant actions.",
+                "recommended_tasks": [
+                    "Analyze goal to understand the problem statement and its context",
+                    "Extract insights from the dataset to identify patterns and correlations that may indicate the root cause",
+                    "Recommend action based on the extracted insights, ensuring it is relevant to resolving the issue"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 138
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "603e25ca-03ab-4fe1-b250-0c416c939fc2",
+                "goal": "Analyze endpoint",
+                "filename": null,
+                "url": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d"
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Root Cause Analysis",
+                "description": "A strategy for analyzing complex issues and identifying root causes. This approach involves extracting insights from data and recommending specific actions to address the problem.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Identify root cause",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 141
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Delivery issues",
+                    "Incident Pattern: Customer support unresponsiveness"
+                ]
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Analyze endpoint",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "fed9ecd1-91da-4812-b9d8-9d9d32f79a35",
+                "goal": "Find the root cause of the failures in this CSV logs dataset",
+                "filename": "test_data.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Find the root cause of the failures in this CSV logs dataset",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [],
+                "keywords": [
+                    {
+                        "keyword": "{'id':",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'status':",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'message':",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'failed',",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "1,",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "'timeout",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "error'}",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "2,",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "'success',",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "'ok'}",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "3,",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "locked'}",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate and resolve the unknown URL type error in CSV logs dataset",
+                "severity": "HIGH",
+                "timestamp": "2026-03-19 22:09:18.057578"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "The analysis correctly identifies the major operational issues and their root cause as an unknown URL type error in fetching CSV logs dataset. The recommended action is also directly addressing this root cause, which is a good match."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.9,
+                "usefulness": 0.8,
+                "timeliness": 1.0,
+                "summary": "The session is highly accurate in identifying the major operational issues and their root cause, moderately useful in providing a clear recommended action, and extremely timely in addressing the issue."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Root Cause Analysis",
+                "description": "A strategy for identifying the root cause of failures in datasets by analyzing the goal, extracting insights from the data, and recommending actions to address the root cause.",
+                "recommended_tasks": [
+                    "Analyze the goal to understand the problem statement",
+                    "Extract insights from the dataset to identify patterns and anomalies",
+                    "Recommend an action that directly addresses the root cause of the failure"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 153
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "e8a764a2-1572-445a-bf76-38e36eac3191",
+                "goal": "Describe all the operational issues and the solutions for them .",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Describe all the operational issues and the solutions for them .",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Historical Recurring Issue: Unknown URL type: c> error in fetching CSV logs dataset (seen 1 times)",
+                    "Historical Recurring Issue: Insufficient database connection and high CPU usage on Kubernetes nodes are likely contributing to these issues. (seen 1 times)"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 07:59:25.986725"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 2",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Historical Recurring Issue: Unknown URL type: c> error in fetching CSV logs dataset (seen 1 times)",
+                    "Historical Recurring Issue: Insufficient database connection and high CPU usage on Kubernetes nodes are likely contributing to these issues. (seen 1 times)"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 08:00:35.715087"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 3",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Historical Recurring Issue: Unknown URL type: c> error in fetching CSV logs dataset (seen 1 times)",
+                    "Historical Recurring Issue: Insufficient database connection and high CPU usage on Kubernetes nodes are likely contributing to these issues. (seen 1 times)"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Logged for review",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 08:01:45.384278"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.0,
+                "quality": "Needs improvement",
+                "reasoning": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.0,
+                    "quality": "Needs improvement",
+                    "reasoning": ""
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "major_issue": "Ollama Offline or Timeout",
+                "root_cause": "The backend AI LLM service did not respond within 15 seconds.",
+                "severity": "HIGH",
+                "recommended_action": "Check if Ollama is running and 'llama3' is pulled."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "quality": "Good",
+                "feedback": "Fallback approval to continue pipeline."
+            }
+        },
+        {
+            "agent": "Meta-PromptOptimization",
+            "action": "Optimized prompts",
+            "details": {
+                "PlannerAgent": "You are a highly analytical PlannerAgent. Ensure your task plans heavily prioritize data-driven root cause analysis and concrete, verifiable operational workflow steps. Output raw JSON arrays only.",
+                "AnalystAgent": "You are an expert enterprise risk AnalystAgent. Do not guess root causes; rely exclusively on the provided retrieved text context, trends, and keywords to deduce operational incidents. Be explicitly clear on data sources. Output plain text strictly following the specified format."
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 174
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Incident Pattern: Historical Recurring Issue: Unknown URL type: c> error in fetching CSV logs dataset (seen 1 times)",
+                    "Incident Pattern: Historical Recurring Issue: Insufficient database connection and high CPU usage on Kubernetes nodes are likely contributing to these issues. (seen 1 times)"
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "ed94cd49-a114-4a2a-9c11-48d048afa84a",
+                "goal": "Describe all the operational issues and the solutions for them .",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Describe all the operational issues and the solutions for them .",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Historical Recurring Issue: The backend AI LLM service did not respond within 15 seconds. (seen 1 times)",
+                    "Historical Recurring Issue: Unknown URL type: c> error in fetching CSV logs dataset (seen 1 times)"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Check if Ollama is running and 'llama3' is pulled.",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 08:16:21.800109"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "The analysis correctly identifies the major issue as Ollama being offline or timed out, and the root cause is a timeout with the backend AI LLM service. The recommended action to check if Ollama is running and 'llama3' is pulled is also relevant and actionable."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.9,
+                "usefulness": 0.8,
+                "timeliness": 1.0,
+                "summary": "The session is highly accurate in identifying the major issue and root cause, moderately useful with a relevant recommended action, and timely as it was taken quickly."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Proactive Analysis and Root Cause Identification",
+                "description": "When faced with operational issues, proactively analyze the situation to identify the root cause. Extract insights from the analysis to inform recommendations for action.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Identify potential root causes",
+                    "Recommend actionable solutions"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 184
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Incident Pattern: Historical Recurring Issue: The backend AI LLM service did not respond within 15 seconds. (seen 1 times)",
+                    "Incident Pattern: Historical Recurring Issue: Unknown URL type: c> error in fetching CSV logs dataset (seen 1 times)"
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "b323dcf8-a690-4120-8f3b-fb90512738cb",
+                "goal": "Describe all the operational issues and the solutions for them .",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Describe all the operational issues and the solutions for them .",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Historical Recurring Issue: The backend AI LLM service did not respond within 120 seconds. (seen 1 times)",
+                    "Historical Recurring Issue: The backend AI LLM service did not respond within 15 seconds. (seen 1 times)"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate root cause and implement solution to prevent future occurrences",
+                "severity": "MEDIUM",
+                "timestamp": "2026-03-20 08:31:01.533642"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "The analysis correctly identifies the recurring issues as the root cause of the problem, and the recommended action is to investigate and prevent future occurrences, which aligns with the severity level (Medium)."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.8,
+                "usefulness": 0.9,
+                "timeliness": 1.0,
+                "summary": "The session is accurate in identifying the root cause of the issue and providing a recommended action to prevent future occurrences. The analysis is useful in highlighting the recurring issues and their impact on system performance. The timeliness of the response is excellent, as it was delivered quickly."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Root Cause Analysis and Prevention",
+                "description": "When faced with operational issues, prioritize identifying the root cause and develop a plan to prevent future occurrences. This approach ensures that the solution addresses the underlying problem rather than just treating symptoms.",
+                "recommended_tasks": [
+                    "Analyze goal to understand the scope of the issue",
+                    "Extract insights from data to identify recurring patterns or causes",
+                    "Recommend action to investigate and prevent future occurrences"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 194
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Incident Pattern: Historical Recurring Issue: The backend AI LLM service did not respond within 120 seconds. (seen 1 times)",
+                    "Incident Pattern: Historical Recurring Issue: The backend AI LLM service did not respond within 15 seconds. (seen 1 times)"
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "bea1410d-2caa-4d2f-82b8-205697a398d9",
+                "goal": "test",
+                "filename": null,
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "test",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "cd34e047-97ee-4388-9a0d-f6d6c6cbdba2",
+                "goal": "",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Historical Recurring Issue: Historical Recurring Issues: System Test Verified (seen 2 times), The backend AI LLM service did not respond within 120 seconds. (seen 1 times) and The backend AI LLM service did not respond within 15 seconds. (seen 1 times) (seen 1 times)",
+                    "Historical Recurring Issue: The backend AI LLM service did not respond within 120 seconds. (seen 1 times)",
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate AI LLM service delay and implement measures for timely response",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 08:46:00.416032"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "Root cause clearly identified as AI LLM service delay, and recommended action is to investigate and implement measures for timely response, which aligns with the severity level of 'High'."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.8,
+                "usefulness": 0.9,
+                "timeliness": 1.0,
+                "summary": "The session demonstrated good accuracy in identifying the root cause of system failures and critical service downtime, moderate usefulness by providing a clear recommended action to address the issue, and excellent timeliness as the action was taken promptly."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Root Cause Analysis and Timely Response",
+                "description": "When faced with a goal that involves identifying the root cause of an issue and implementing measures for timely response, this strategy can be employed to achieve success.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 207
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Incident Pattern: Historical Recurring Issue: Historical Recurring Issues: System Test Verified (seen 2 times), The backend AI LLM service did not respond within 120 seconds. (seen 1 times) and The backend AI LLM service did not respond within 15 seconds. (seen 1 times) (seen 1 times)",
+                    "Incident Pattern: Historical Recurring Issue: The backend AI LLM service did not respond within 120 seconds. (seen 1 times)",
+                    "Incident Pattern: Current Trend: System failures detected in logs",
+                    "Incident Pattern: Current Trend: Critical service downtime detected"
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "d1b2961f-dcc8-4a3f-8897-b2e6c98bfd8e",
+                "goal": "",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Historical Recurring Issue: The backend AI LLM service did not respond within 120 seconds. (seen 2 times)",
+                    "Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Historical Recurring Issue: Historical Recurring Issues: System Test Verified (seen 2 times), The backend AI LLM service did not respond within 120 seconds. (seen 1 times) and The backend AI LLM service did not respond within 15 seconds. (seen 1 times) (seen 1 times)",
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate and resolve the root cause of the backend AI LLM service unresponsiveness",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 09:04:32.034970"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "The analysis correctly identifies the backend AI LLM service unresponsiveness as a major issue and determines its root cause to be historical recurring issue of not responding within 120 seconds. The recommended action is also relevant and specific to resolving the root cause."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.9,
+                "usefulness": 0.95,
+                "timeliness": 1.0,
+                "summary": "The session demonstrates high accuracy in identifying the major issue and its root cause, high usefulness in providing a relevant and specific recommended action, and timeliness as the action was taken quickly."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Root Cause Analysis and Recommendation",
+                "description": "When faced with an unresponsive AI LLM service, prioritize identifying the root cause of the issue through analysis and extract insights to inform a specific and relevant recommendation for resolution.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 217
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Historical Recurring Issue: The backend AI LLM service did not respond within 120 seconds. (seen 2 times)",
+                    "Incident Pattern: Historical Recurring Issue: System Test Verified (seen 2 times)",
+                    "Incident Pattern: Historical Recurring Issue: Historical Recurring Issues: System Test Verified (seen 2 times), The backend AI LLM service did not respond within 120 seconds. (seen 1 times) and The backend AI LLM service did not respond within 15 seconds. (seen 1 times) (seen 1 times)",
+                    "Incident Pattern: Current Trend: System failures detected in logs",
+                    "Incident Pattern: Current Trend: Critical service downtime detected"
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "b78d3c2e-690b-456c-a259-538daccb0c37",
+                "goal": "Describe the issues and actions to be taken.",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Describe the issues and actions to be taken.",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate system logs for potential causes of failure and implement measures to prevent future downtime",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 09:15:25.442889"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.7,
+                "quality": "Needs improvement",
+                "reasoning": "Root cause not clearly identified, but recommended action is reasonable and addresses the severity of the issue"
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 2",
+            "details": {}
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.7,
+                    "quality": "Needs improvement",
+                    "reasoning": "Root cause not clearly identified, but recommended action is reasonable and addresses the severity of the issue"
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "b6f6fc9d-d6a9-4260-962f-97d15d5ad722",
+                "goal": "test",
+                "filename": null,
+                "url": ""
+            }
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "4082906c-fdb0-4a44-8176-6722a3f58393",
+                "goal": "Investigate.",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Investigate.",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate database connectivity issues and implement a solution to prevent future outages.",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 09:31:41.817356"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "Root cause clearly identified as database connection timeout, and recommended action is to investigate and implement a solution to prevent future outages, which aligns with the severity level of 'High'."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.9,
+                "usefulness": 0.8,
+                "timeliness": 1.0,
+                "summary": "The session accurately identified the root cause of system failures and critical service downtime as a database connection timeout, providing a clear recommended action to prevent future outages. The analysis was useful in highlighting the severity of the issue and the need for prompt resolution."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Database Connection Timeout Investigation",
+                "description": "When investigating database connection timeouts, prioritize identifying the root cause and recommending actions to prevent future outages.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 237
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Current Trend: System failures detected in logs",
+                    "Incident Pattern: Current Trend: Critical service downtime detected"
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "30c43442-c302-4768-a26e-c1012e9852fa",
+                "goal": "",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "ed77dc98-28a6-4b14-b3ae-474980d8cff7",
+                "goal": "Detect the issues and tell the solutions.",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Detect the issues and tell the solutions.",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate system logs and implement measures to prevent future occurrences",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 14:22:02.941372"
+            }
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.6,
+                "quality": "Needs improvement",
+                "reasoning": "Root cause not clearly identified, but recommended action is reasonable and addresses the severity of the issue."
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 2",
+            "details": {}
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate and resolve database connection timeout issue",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 14:28:40.196372"
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.6,
+                    "quality": "Needs improvement",
+                    "reasoning": "Root cause not clearly identified, but recommended action is reasonable and addresses the severity of the issue."
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.9,
+                "quality": "Good",
+                "reasoning": "The analysis correctly identifies the database connection timeout and high CPU usage on Kubernetes nodes as the root causes of system failures and critical service downtime. The recommended action to investigate and resolve the database connection timeout issue is also appropriate and aligns with the identified root cause."
+            }
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.9,
+                "usefulness": 0.8,
+                "timeliness": 1.0,
+                "summary": "The session demonstrates good accuracy in identifying the root causes of system failures and critical service downtime, moderate usefulness in providing a clear recommended action to resolve the issue, and high timeliness as the action was taken quickly."
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate system logs and performance metrics",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 14:34:29.592308"
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Root Cause Analysis and Recommendation",
+                "description": "When faced with system failures or critical service downtime, this strategy involves analyzing the goal to identify potential root causes, extracting insights from data and logs, and recommending actions to resolve the issues.",
+                "recommended_tasks": [
+                    "Analyze the goal to understand the scope of the problem",
+                    "Extract insights from relevant data and logs to identify potential root causes",
+                    "Recommend specific actions to investigate and resolve identified issues"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 257
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Current Trend: System failures detected in logs",
+                    "Incident Pattern: Current Trend: Critical service downtime detected"
+                ]
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.6,
+                "quality": "Needs improvement",
+                "reasoning": "Although the analysis detected system failures and critical service downtime, it was unable to determine the root cause of these issues. The recommended action is a good first step in investigating potential causes, but further analysis would be needed to identify the underlying root cause."
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 3",
+            "details": {}
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.6,
+                    "quality": "Needs improvement",
+                    "reasoning": "Although the analysis detected system failures and critical service downtime, it was unable to determine the root cause of these issues. The recommended action is a good first step in investigating potential causes, but further analysis would be needed to identify the underlying root cause."
+                },
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Further investigation and analysis required",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 14:39:16.117163"
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "ff45937a-86fd-4db6-8572-fba2c867d364",
+                "goal": "Analyze general problems",
+                "filename": null,
+                "url": null
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "Analyze general problems",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: Routine operational patterns"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "not",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "order",
+                        "count": 4
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "my",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "refund",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "product",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "customer",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "support",
+                        "count": 2
+                    },
+                    {
+                        "keyword": "has",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "been",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "delivered",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "after",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "5",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "days",
+                        "count": 1
+                    },
+                    {
+                        "keyword": "for",
+                        "count": 1
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "System",
+            "action": "Received User Goal",
+            "details": {
+                "session": "e4806f43-7e89-4d35-b8fc-c8df48d9897a",
+                "goal": "",
+                "filename": "demo_dataset.csv",
+                "url": ""
+            }
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Generated initial plan",
+            "details": {
+                "goal": "",
+                "tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 1",
+            "details": {}
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Investigate system logs for errors, perform database maintenance, and provide support to customers affected by the downtime",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 14:58:02.196970"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.6,
+                "quality": "Needs improvement",
+                "reasoning": "Root cause not clearly identified, but recommended action is reasonable and addresses the severity of the issue"
+            }
+        },
+        {
+            "agent": "Orchestrator",
+            "action": "Starting reasoning loop iteration 2",
+            "details": {}
+        },
+        {
+            "agent": "PlannerAgent",
+            "action": "Refined plan",
+            "details": {
+                "evaluation": {
+                    "decision_score": 0.6,
+                    "quality": "Needs improvement",
+                    "reasoning": "Root cause not clearly identified, but recommended action is reasonable and addresses the severity of the issue"
+                },
+                "tasks": [
+                    "{\"Re-examine goal definition to identify root cause of failure in previous plan's decision-making process\":\"\",",
+                    "\"Conduct thorough data analysis to determine the underlying factors contributing to the issue's severity and impact on operations\":\"\",",
+                    "\"Develop a revised action plan that addresses the identified root causes, prioritizing concrete operational steps and measurable outcomes\":\"\",",
+                    "\"Verify and validate the new plan through rigorous testing and simulation scenarios\":\"\",",
+                    "\"Evaluate the effectiveness of the refined plan using data-driven metrics and KPIs\":\"} } } } } } } } } } } } } } } } } } } } } } } } } } } } } } }",
+                    "Re-evaluate root cause deeply"
+                ]
+            }
+        },
+        {
+            "agent": "AnalystAgent",
+            "action": "Analyzed enterprise data with RAG",
+            "details": {
+                "trends": [
+                    "Current Trend: System failures detected in logs",
+                    "Current Trend: Critical service downtime detected"
+                ],
+                "keywords": [
+                    {
+                        "keyword": "{'ticketid':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'timestamp':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'2026-03-19",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'department':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'issue_type':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "'description':",
+                        "count": 8
+                    },
+                    {
+                        "keyword": "the",
+                        "count": 7
+                    },
+                    {
+                        "keyword": "support',",
+                        "count": 5
+                    },
+                    {
+                        "keyword": "'it",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'database",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "error',",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "to",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "'customer",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "their",
+                        "count": 3
+                    },
+                    {
+                        "keyword": "is",
+                        "count": 3
+                    }
+                ]
+            }
+        },
+        {
+            "agent": "ExecutorAgent",
+            "action": "Executed action",
+            "details": {
+                "action": "Conduct thorough data analysis and prioritize concrete operational steps",
+                "severity": "HIGH",
+                "timestamp": "2026-03-20 15:03:29.740845"
+            }
+        },
+        {
+            "agent": "CriticAgent",
+            "action": "Evaluated decision quality",
+            "details": {
+                "decision_score": 0.8,
+                "quality": "Good",
+                "reasoning": "The analysis correctly identifies the major issue and severity, and the recommended action is a direct response to the root cause. The only area for improvement is that it could have dug deeper into the underlying factors contributing to the issue's severity."
+            }
+        },
+        {
+            "agent": "Meta-PerformanceEvaluation",
+            "action": "Evaluated overall session",
+            "details": {
+                "accuracy": 0.9,
+                "usefulness": 0.8,
+                "timeliness": 1.0,
+                "summary": "The session accurately identified the major issue and severity, with a good quality analysis that correctly responded to the root cause. The only area for improvement is that it could have dug deeper into the underlying factors contributing to the issue's severity."
+            }
+        },
+        {
+            "agent": "Meta-StrategyOptimization",
+            "action": "Learned new strategy",
+            "details": {
+                "strategy_name": "Root Cause Analysis and Plan Revision",
+                "description": "When faced with a failed plan, re-examine the goal definition to identify the root cause of failure. Conduct thorough data analysis to determine the underlying factors contributing to the issue's severity and impact on operations. Develop a revised action plan that addresses the identified root causes, prioritizing concrete operational steps and measurable outcomes. Verify and validate the new plan through rigorous testing and simulation scenarios. Evaluate the effectiveness of the refined plan using data-driven metrics and KPIs.",
+                "recommended_tasks": [
+                    "Re-examine goal definition to identify root cause of failure",
+                    "Conduct thorough data analysis to determine underlying factors contributing to issue's severity",
+                    "Develop revised action plan addressing identified root causes",
+                    "Verify and validate new plan through testing and simulation scenarios",
+                    "Evaluate effectiveness of refined plan using data-driven metrics"
+                ]
+            }
+        },
+        {
+            "agent": "Meta-MemoryManagement",
+            "action": "Triggered archival process",
+            "details": {
+                "archived_count": 281
+            }
+        },
+        {
+            "agent": "MonitoringAgent",
+            "action": "Detected incidents",
+            "details": {
+                "incidents": [
+                    "Incident Pattern: Current Trend: System failures detected in logs",
+                    "Incident Pattern: Current Trend: Critical service downtime detected"
+                ]
+            }
         }
     ],
     "strategies": [
@@ -1893,6 +5521,155 @@
                     "Recommend action"
                 ]
             }
+        },
+        {
+            "goal": "analyze",
+            "strategy": {
+                "quality": "Good",
+                "feedback": "Mocked Plan success."
+            }
+        },
+        {
+            "goal": "analyze",
+            "strategy": {
+                "quality": "Good",
+                "feedback": "Mocked Plan success."
+            }
+        },
+        {
+            "goal": "Find the root cause of the failures in this CSV logs dataset",
+            "strategy": {
+                "strategy_name": "Root Cause Analysis",
+                "description": "A structured approach to identify and resolve the root cause of failures in datasets by analyzing goal, extracting insights, and recommending relevant actions.",
+                "recommended_tasks": [
+                    "Analyze goal to understand the problem statement and its context",
+                    "Extract insights from the dataset to identify patterns and correlations that may indicate the root cause",
+                    "Recommend action based on the extracted insights, ensuring it is relevant to resolving the issue"
+                ]
+            }
+        },
+        {
+            "goal": "analyze",
+            "strategy": {
+                "strategy_name": "Root Cause Analysis",
+                "description": "A strategy for analyzing complex issues and identifying root causes. This approach involves extracting insights from data and recommending specific actions to address the problem.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Identify root cause",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "goal": "Find the root cause of the failures in this CSV logs dataset",
+            "strategy": {
+                "strategy_name": "Root Cause Analysis",
+                "description": "A strategy for identifying the root cause of failures in datasets by analyzing the goal, extracting insights from the data, and recommending actions to address the root cause.",
+                "recommended_tasks": [
+                    "Analyze the goal to understand the problem statement",
+                    "Extract insights from the dataset to identify patterns and anomalies",
+                    "Recommend an action that directly addresses the root cause of the failure"
+                ]
+            }
+        },
+        {
+            "goal": "Describe all the operational issues and the solutions for them .",
+            "strategy": {
+                "quality": "Good",
+                "feedback": "Fallback approval to continue pipeline."
+            }
+        },
+        {
+            "goal": "Describe all the operational issues and the solutions for them .",
+            "strategy": {
+                "strategy_name": "Proactive Analysis and Root Cause Identification",
+                "description": "When faced with operational issues, proactively analyze the situation to identify the root cause. Extract insights from the analysis to inform recommendations for action.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Identify potential root causes",
+                    "Recommend actionable solutions"
+                ]
+            }
+        },
+        {
+            "goal": "Describe all the operational issues and the solutions for them .",
+            "strategy": {
+                "strategy_name": "Root Cause Analysis and Prevention",
+                "description": "When faced with operational issues, prioritize identifying the root cause and develop a plan to prevent future occurrences. This approach ensures that the solution addresses the underlying problem rather than just treating symptoms.",
+                "recommended_tasks": [
+                    "Analyze goal to understand the scope of the issue",
+                    "Extract insights from data to identify recurring patterns or causes",
+                    "Recommend action to investigate and prevent future occurrences"
+                ]
+            }
+        },
+        {
+            "goal": "",
+            "strategy": {
+                "strategy_name": "Root Cause Analysis and Timely Response",
+                "description": "When faced with a goal that involves identifying the root cause of an issue and implementing measures for timely response, this strategy can be employed to achieve success.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "goal": "",
+            "strategy": {
+                "strategy_name": "Root Cause Analysis and Recommendation",
+                "description": "When faced with an unresponsive AI LLM service, prioritize identifying the root cause of the issue through analysis and extract insights to inform a specific and relevant recommendation for resolution.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "goal": "Investigate.",
+            "strategy": {
+                "strategy_name": "Database Connection Timeout Investigation",
+                "description": "When investigating database connection timeouts, prioritize identifying the root cause and recommending actions to prevent future outages.",
+                "recommended_tasks": [
+                    "Analyze goal",
+                    "Extract insights",
+                    "Recommend action"
+                ]
+            }
+        },
+        {
+            "goal": "Detect the issues and tell the solutions.",
+            "strategy": {
+                "strategy_name": "Root Cause Analysis and Recommendation",
+                "description": "When faced with system failures or critical service downtime, this strategy involves analyzing the goal to identify potential root causes, extracting insights from data and logs, and recommending actions to resolve the issues.",
+                "recommended_tasks": [
+                    "Analyze the goal to understand the scope of the problem",
+                    "Extract insights from relevant data and logs to identify potential root causes",
+                    "Recommend specific actions to investigate and resolve identified issues"
+                ]
+            }
+        },
+        {
+            "goal": "",
+            "strategy": {
+                "strategy_name": "Root Cause Analysis and Plan Revision",
+                "description": "When faced with a failed plan, re-examine the goal definition to identify the root cause of failure. Conduct thorough data analysis to determine the underlying factors contributing to the issue's severity and impact on operations. Develop a revised action plan that addresses the identified root causes, prioritizing concrete operational steps and measurable outcomes. Verify and validate the new plan through rigorous testing and simulation scenarios. Evaluate the effectiveness of the refined plan using data-driven metrics and KPIs.",
+                "recommended_tasks": [
+                    "Re-examine goal definition to identify root cause of failure",
+                    "Conduct thorough data analysis to determine underlying factors contributing to issue's severity",
+                    "Develop revised action plan addressing identified root causes",
+                    "Verify and validate new plan through testing and simulation scenarios",
+                    "Evaluate effectiveness of refined plan using data-driven metrics"
+                ]
+            }
         }
-    ]
+    ],
+    "prompts": {
+        "PlannerAgent": "You are a highly analytical PlannerAgent. Ensure your task plans heavily prioritize data-driven root cause analysis and concrete, verifiable operational workflow steps. Output raw JSON arrays only.",
+        "AnalystAgent": "You are an expert enterprise risk AnalystAgent. Do not guess root causes; rely exclusively on the provided retrieved text context, trends, and keywords to deduce operational incidents. Be explicitly clear on data sources. Output plain text strictly following the specified format."
+    }
 }

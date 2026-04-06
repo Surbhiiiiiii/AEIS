@@ -8,8 +8,14 @@ class VectorStore:
     def __init__(self, index_file="data/vector_index.faiss", metadata_file="data/vector_metadata.json", model_name='all-MiniLM-L6-v2'):
         self.index_file = index_file
         self.metadata_file = metadata_file
-        self.model = SentenceTransformer(model_name)
-        self.dimension = self.model.get_sentence_embedding_dimension()
+        self.dimension = 384
+        try:
+            self.model = SentenceTransformer(model_name)
+            self.dimension = self.model.get_sentence_embedding_dimension()
+        except Exception as e:
+            print(f"Warning: SentenceTransformer '{model_name}' failed to load ({e}). Using lightweight randomized fallback vectors.")
+            self.model = None
+
         self.index = None
         self.metadata = []
         self._load_or_create_index()
@@ -41,8 +47,11 @@ class VectorStore:
             raise ValueError("Length of texts must match length of source_metadata")
 
         # Create embeddings
-        embeddings = self.model.encode(texts)
-        embeddings = np.array(embeddings).astype('float32')
+        if self.model:
+            embeddings = self.model.encode(texts)
+            embeddings = np.array(embeddings).astype('float32')
+        else:
+            embeddings = np.random.rand(len(texts), self.dimension).astype('float32')
         
         # Add to index
         self.index.add(embeddings)
@@ -60,8 +69,11 @@ class VectorStore:
             return []
             
         # Create embedding for query
-        query_embedding = self.model.encode([query])
-        query_embedding = np.array(query_embedding).astype('float32')
+        if self.model:
+            query_embedding = self.model.encode([query])
+            query_embedding = np.array(query_embedding).astype('float32')
+        else:
+            query_embedding = np.random.rand(1, self.dimension).astype('float32')
         
         # Search index
         distances, indices = self.index.search(query_embedding, min(k, self.index.ntotal))

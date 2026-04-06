@@ -1490,5 +1490,1401 @@
     {
         "source": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d",
         "content": "{\"status\":\"success\",\"timestamp\":\"2026-03-19T10:30:00Z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"INC-10234\",\"title\":\"Database connection timeout\",\"description\":\"Application servers unable to connect to PostgreSQL database.\",\"severity\":\"Critical\",\"priority\":\"P1\",\"status\":\"Open\",\"service\":\"Customer Billing Service\",\"category\":\"Database\",\"detected_by\":\"Monitoring System\",\"reported_by\":\"Automated Alert\",\"created_at\":\"2026-03-19T09:45:00Z\",\"last_updated\":\"2026-03-19T10:15:00Z\",\"assigned_team\":\"Database Operations\",\"affected_region\":\"US-East\",\"impact\":\"Payment processing unavailable\"},{\"incident_id\":\"INC-10235\",\"title\":\"High CPU usage on Kubernetes nodes\",\"description\":\"Cluster nodes experiencing CPU spikes causing pod restarts.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Investigating\",\"service\":\"Recommendation Engine\",\"category\":\"Infrastructure\",\"detected_by\":\"Prometheus\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T08:30:00Z\",\"last_updated\":\"2026-03-19T09:50:00Z\",\"assigned_team\":\"Cloud Platform Team\",\"affected_region\":\"EU-West\",\"impact\":\"Recommendation latency increased\"},{\"incident_id\":\"INC-10236\",\"title\":\"API gateway returning 502 errors\",\"description\":\"Users experiencing intermittent 502 errors while accessing APIs.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Mitigated\",\"service\":\"API Gateway\",\"category\":\"Network\",\"detected_by\":\"Datadog\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-18T22:15:00Z\",\"last_updated\":\"2026-03-19T09:00:00Z\",\"assigned_team\":\"Network Engineering\",\"affected_region\":\"Global\",\"impact\":\"Partial API downtime\"},{\"incident_id\":\"INC-10237\",\"title\":\"Login failures after authentication update\",\"description\":\"Users unable to login after OAuth configuration change.\",\"severity\":\"Medium\",\"priority\":\"P3\",\"status\":\"Open\",\"service\":\"Authentication Service\",\"category\":\"Application\",\"detected_by\":\"User Reports\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-19T07:50:00Z\",\"last_updated\":\"2026-03-19T09:10:00Z\",\"assigned_team\":\"Identity Team\",\"affected_region\":\"Asia-Pacific\",\"impact\":\"User login issues\"},{\"incident_id\":\"INC-10238\",\"title\":\"Slow response from search service\",\"description\":\"Search queries taking longer than expected.\",\"severity\":\"Low\",\"priority\":\"P4\",\"status\":\"Monitoring\",\"service\":\"Search Service\",\"category\":\"Performance\",\"detected_by\":\"APM Tool\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T06:30:00Z\",\"last_updated\":\"2026-03-19T08:00:00Z\",\"assigned_team\":\"Search Infrastructure Team\",\"affected_region\":\"Global\",\"impact\":\"Slight increase in search latency\"}]}"
+    },
+    {
+        "source": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d",
+        "content": "{\"status\":\"success\",\"timestamp\":\"2026-03-19T10:30:00Z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"INC-10234\",\"title\":\"Database connection timeout\",\"description\":\"Application servers unable to connect to PostgreSQL database.\",\"severity\":\"Critical\",\"priority\":\"P1\",\"status\":\"Open\",\"service\":\"Customer Billing Service\",\"category\":\"Database\",\"detected_by\":\"Monitoring System\",\"reported_by\":\"Automated Alert\",\"created_at\":\"2026-03-19T09:45:00Z\",\"last_updated\":\"2026-03-19T10:15:00Z\",\"assigned_team\":\"Database Operations\",\"affected_region\":\"US-East\",\"impact\":\"Payment processing unavailable\"},{\"incident_id\":\"INC-10235\",\"title\":\"High CPU usage on Kubernetes nodes\",\"description\":\"Cluster nodes experiencing CPU spikes causing pod restarts.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Investigating\",\"service\":\"Recommendation Engine\",\"category\":\"Infrastructure\",\"detected_by\":\"Prometheus\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T08:30:00Z\",\"last_updated\":\"2026-03-19T09:50:00Z\",\"assigned_team\":\"Cloud Platform Team\",\"affected_region\":\"EU-West\",\"impact\":\"Recommendation latency increased\"},{\"incident_id\":\"INC-10236\",\"title\":\"API gateway returning 502 errors\",\"description\":\"Users experiencing intermittent 502 errors while accessing APIs.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Mitigated\",\"service\":\"API Gateway\",\"category\":\"Network\",\"detected_by\":\"Datadog\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-18T22:15:00Z\",\"last_updated\":\"2026-03-19T09:00:00Z\",\"assigned_team\":\"Network Engineering\",\"affected_region\":\"Global\",\"impact\":\"Partial API downtime\"},{\"incident_id\":\"INC-10237\",\"title\":\"Login failures after authentication update\",\"description\":\"Users unable to login after OAuth configuration change.\",\"severity\":\"Medium\",\"priority\":\"P3\",\"status\":\"Open\",\"service\":\"Authentication Service\",\"category\":\"Application\",\"detected_by\":\"User Reports\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-19T07:50:00Z\",\"last_updated\":\"2026-03-19T09:10:00Z\",\"assigned_team\":\"Identity Team\",\"affected_region\":\"Asia-Pacific\",\"impact\":\"User login issues\"},{\"incident_id\":\"INC-10238\",\"title\":\"Slow response from search service\",\"description\":\"Search queries taking longer than expected.\",\"severity\":\"Low\",\"priority\":\"P4\",\"status\":\"Monitoring\",\"service\":\"Search Service\",\"category\":\"Performance\",\"detected_by\":\"APM Tool\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T06:30:00Z\",\"last_updated\":\"2026-03-19T08:00:00Z\",\"assigned_team\":\"Search Infrastructure Team\",\"affected_region\":\"Global\",\"impact\":\"Slight increase in search latency\"}]}"
+    },
+    {
+        "source": "test_data.csv",
+        "content": "{'id': 1, 'status': 'failed', 'message': 'timeout error'}"
+    },
+    {
+        "source": "test_data.csv",
+        "content": "{'id': 2, 'status': 'success', 'message': 'ok'}"
+    },
+    {
+        "source": "test_data.csv",
+        "content": "{'id': 3, 'status': 'failed', 'message': 'database locked'}"
+    },
+    {
+        "source": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d",
+        "content": "{\"status\":\"success\",\"timestamp\":\"2026-03-19T10:30:00Z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"INC-10234\",\"title\":\"Database connection timeout\",\"description\":\"Application servers unable to connect to PostgreSQL database.\",\"severity\":\"Critical\",\"priority\":\"P1\",\"status\":\"Open\",\"service\":\"Customer Billing Service\",\"category\":\"Database\",\"detected_by\":\"Monitoring System\",\"reported_by\":\"Automated Alert\",\"created_at\":\"2026-03-19T09:45:00Z\",\"last_updated\":\"2026-03-19T10:15:00Z\",\"assigned_team\":\"Database Operations\",\"affected_region\":\"US-East\",\"impact\":\"Payment processing unavailable\"},{\"incident_id\":\"INC-10235\",\"title\":\"High CPU usage on Kubernetes nodes\",\"description\":\"Cluster nodes experiencing CPU spikes causing pod restarts.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Investigating\",\"service\":\"Recommendation Engine\",\"category\":\"Infrastructure\",\"detected_by\":\"Prometheus\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T08:30:00Z\",\"last_updated\":\"2026-03-19T09:50:00Z\",\"assigned_team\":\"Cloud Platform Team\",\"affected_region\":\"EU-West\",\"impact\":\"Recommendation latency increased\"},{\"incident_id\":\"INC-10236\",\"title\":\"API gateway returning 502 errors\",\"description\":\"Users experiencing intermittent 502 errors while accessing APIs.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Mitigated\",\"service\":\"API Gateway\",\"category\":\"Network\",\"detected_by\":\"Datadog\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-18T22:15:00Z\",\"last_updated\":\"2026-03-19T09:00:00Z\",\"assigned_team\":\"Network Engineering\",\"affected_region\":\"Global\",\"impact\":\"Partial API downtime\"},{\"incident_id\":\"INC-10237\",\"title\":\"Login failures after authentication update\",\"description\":\"Users unable to login after OAuth configuration change.\",\"severity\":\"Medium\",\"priority\":\"P3\",\"status\":\"Open\",\"service\":\"Authentication Service\",\"category\":\"Application\",\"detected_by\":\"User Reports\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-19T07:50:00Z\",\"last_updated\":\"2026-03-19T09:10:00Z\",\"assigned_team\":\"Identity Team\",\"affected_region\":\"Asia-Pacific\",\"impact\":\"User login issues\"},{\"incident_id\":\"INC-10238\",\"title\":\"Slow response from search service\",\"description\":\"Search queries taking longer than expected.\",\"severity\":\"Low\",\"priority\":\"P4\",\"status\":\"Monitoring\",\"service\":\"Search Service\",\"category\":\"Performance\",\"detected_by\":\"APM Tool\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T06:30:00Z\",\"last_updated\":\"2026-03-19T08:00:00Z\",\"assigned_team\":\"Search Infrastructure Team\",\"affected_region\":\"Global\",\"impact\":\"Slight increase in search latency\"}]}"
+    },
+    {
+        "source": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d",
+        "content": "{\"status\":\"success\",\"timestamp\":\"2026-03-19T10:30:00Z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"INC-10234\",\"title\":\"Database connection timeout\",\"description\":\"Application servers unable to connect to PostgreSQL database.\",\"severity\":\"Critical\",\"priority\":\"P1\",\"status\":\"Open\",\"service\":\"Customer Billing Service\",\"category\":\"Database\",\"detected_by\":\"Monitoring System\",\"reported_by\":\"Automated Alert\",\"created_at\":\"2026-03-19T09:45:00Z\",\"last_updated\":\"2026-03-19T10:15:00Z\",\"assigned_team\":\"Database Operations\",\"affected_region\":\"US-East\",\"impact\":\"Payment processing unavailable\"},{\"incident_id\":\"INC-10235\",\"title\":\"High CPU usage on Kubernetes nodes\",\"description\":\"Cluster nodes experiencing CPU spikes causing pod restarts.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Investigating\",\"service\":\"Recommendation Engine\",\"category\":\"Infrastructure\",\"detected_by\":\"Prometheus\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T08:30:00Z\",\"last_updated\":\"2026-03-19T09:50:00Z\",\"assigned_team\":\"Cloud Platform Team\",\"affected_region\":\"EU-West\",\"impact\":\"Recommendation latency increased\"},{\"incident_id\":\"INC-10236\",\"title\":\"API gateway returning 502 errors\",\"description\":\"Users experiencing intermittent 502 errors while accessing APIs.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Mitigated\",\"service\":\"API Gateway\",\"category\":\"Network\",\"detected_by\":\"Datadog\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-18T22:15:00Z\",\"last_updated\":\"2026-03-19T09:00:00Z\",\"assigned_team\":\"Network Engineering\",\"affected_region\":\"Global\",\"impact\":\"Partial API downtime\"},{\"incident_id\":\"INC-10237\",\"title\":\"Login failures after authentication update\",\"description\":\"Users unable to login after OAuth configuration change.\",\"severity\":\"Medium\",\"priority\":\"P3\",\"status\":\"Open\",\"service\":\"Authentication Service\",\"category\":\"Application\",\"detected_by\":\"User Reports\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-19T07:50:00Z\",\"last_updated\":\"2026-03-19T09:10:00Z\",\"assigned_team\":\"Identity Team\",\"affected_region\":\"Asia-Pacific\",\"impact\":\"User login issues\"},{\"incident_id\":\"INC-10238\",\"title\":\"Slow response from search service\",\"description\":\"Search queries taking longer than expected.\",\"severity\":\"Low\",\"priority\":\"P4\",\"status\":\"Monitoring\",\"service\":\"Search Service\",\"category\":\"Performance\",\"detected_by\":\"APM Tool\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T06:30:00Z\",\"last_updated\":\"2026-03-19T08:00:00Z\",\"assigned_team\":\"Search Infrastructure Team\",\"affected_region\":\"Global\",\"impact\":\"Slight increase in search latency\"}]}"
+    },
+    {
+        "source": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d",
+        "content": "{\"status\":\"success\",\"timestamp\":\"2026-03-19T10:30:00Z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"INC-10234\",\"title\":\"Database connection timeout\",\"description\":\"Application servers unable to connect to PostgreSQL database.\",\"severity\":\"Critical\",\"priority\":\"P1\",\"status\":\"Open\",\"service\":\"Customer Billing Service\",\"category\":\"Database\",\"detected_by\":\"Monitoring System\",\"reported_by\":\"Automated Alert\",\"created_at\":\"2026-03-19T09:45:00Z\",\"last_updated\":\"2026-03-19T10:15:00Z\",\"assigned_team\":\"Database Operations\",\"affected_region\":\"US-East\",\"impact\":\"Payment processing unavailable\"},{\"incident_id\":\"INC-10235\",\"title\":\"High CPU usage on Kubernetes nodes\",\"description\":\"Cluster nodes experiencing CPU spikes causing pod restarts.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Investigating\",\"service\":\"Recommendation Engine\",\"category\":\"Infrastructure\",\"detected_by\":\"Prometheus\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T08:30:00Z\",\"last_updated\":\"2026-03-19T09:50:00Z\",\"assigned_team\":\"Cloud Platform Team\",\"affected_region\":\"EU-West\",\"impact\":\"Recommendation latency increased\"},{\"incident_id\":\"INC-10236\",\"title\":\"API gateway returning 502 errors\",\"description\":\"Users experiencing intermittent 502 errors while accessing APIs.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Mitigated\",\"service\":\"API Gateway\",\"category\":\"Network\",\"detected_by\":\"Datadog\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-18T22:15:00Z\",\"last_updated\":\"2026-03-19T09:00:00Z\",\"assigned_team\":\"Network Engineering\",\"affected_region\":\"Global\",\"impact\":\"Partial API downtime\"},{\"incident_id\":\"INC-10237\",\"title\":\"Login failures after authentication update\",\"description\":\"Users unable to login after OAuth configuration change.\",\"severity\":\"Medium\",\"priority\":\"P3\",\"status\":\"Open\",\"service\":\"Authentication Service\",\"category\":\"Application\",\"detected_by\":\"User Reports\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-19T07:50:00Z\",\"last_updated\":\"2026-03-19T09:10:00Z\",\"assigned_team\":\"Identity Team\",\"affected_region\":\"Asia-Pacific\",\"impact\":\"User login issues\"},{\"incident_id\":\"INC-10238\",\"title\":\"Slow response from search service\",\"description\":\"Search queries taking longer than expected.\",\"severity\":\"Low\",\"priority\":\"P4\",\"status\":\"Monitoring\",\"service\":\"Search Service\",\"category\":\"Performance\",\"detected_by\":\"APM Tool\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T06:30:00Z\",\"last_updated\":\"2026-03-19T08:00:00Z\",\"assigned_team\":\"Search Infrastructure Team\",\"affected_region\":\"Global\",\"impact\":\"Slight increase in search latency\"}]}"
+    },
+    {
+        "source": "https://mocki.io/v1/86a750b5-2604-47b3-91e2-cc5aaf1c7f2d",
+        "content": "{\"status\":\"success\",\"timestamp\":\"2026-03-19T10:30:00Z\",\"total_incidents\":5,\"incidents\":[{\"incident_id\":\"INC-10234\",\"title\":\"Database connection timeout\",\"description\":\"Application servers unable to connect to PostgreSQL database.\",\"severity\":\"Critical\",\"priority\":\"P1\",\"status\":\"Open\",\"service\":\"Customer Billing Service\",\"category\":\"Database\",\"detected_by\":\"Monitoring System\",\"reported_by\":\"Automated Alert\",\"created_at\":\"2026-03-19T09:45:00Z\",\"last_updated\":\"2026-03-19T10:15:00Z\",\"assigned_team\":\"Database Operations\",\"affected_region\":\"US-East\",\"impact\":\"Payment processing unavailable\"},{\"incident_id\":\"INC-10235\",\"title\":\"High CPU usage on Kubernetes nodes\",\"description\":\"Cluster nodes experiencing CPU spikes causing pod restarts.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Investigating\",\"service\":\"Recommendation Engine\",\"category\":\"Infrastructure\",\"detected_by\":\"Prometheus\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T08:30:00Z\",\"last_updated\":\"2026-03-19T09:50:00Z\",\"assigned_team\":\"Cloud Platform Team\",\"affected_region\":\"EU-West\",\"impact\":\"Recommendation latency increased\"},{\"incident_id\":\"INC-10236\",\"title\":\"API gateway returning 502 errors\",\"description\":\"Users experiencing intermittent 502 errors while accessing APIs.\",\"severity\":\"High\",\"priority\":\"P2\",\"status\":\"Mitigated\",\"service\":\"API Gateway\",\"category\":\"Network\",\"detected_by\":\"Datadog\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-18T22:15:00Z\",\"last_updated\":\"2026-03-19T09:00:00Z\",\"assigned_team\":\"Network Engineering\",\"affected_region\":\"Global\",\"impact\":\"Partial API downtime\"},{\"incident_id\":\"INC-10237\",\"title\":\"Login failures after authentication update\",\"description\":\"Users unable to login after OAuth configuration change.\",\"severity\":\"Medium\",\"priority\":\"P3\",\"status\":\"Open\",\"service\":\"Authentication Service\",\"category\":\"Application\",\"detected_by\":\"User Reports\",\"reported_by\":\"Customer Support\",\"created_at\":\"2026-03-19T07:50:00Z\",\"last_updated\":\"2026-03-19T09:10:00Z\",\"assigned_team\":\"Identity Team\",\"affected_region\":\"Asia-Pacific\",\"impact\":\"User login issues\"},{\"incident_id\":\"INC-10238\",\"title\":\"Slow response from search service\",\"description\":\"Search queries taking longer than expected.\",\"severity\":\"Low\",\"priority\":\"P4\",\"status\":\"Monitoring\",\"service\":\"Search Service\",\"category\":\"Performance\",\"detected_by\":\"APM Tool\",\"reported_by\":\"Monitoring Alert\",\"created_at\":\"2026-03-19T06:30:00Z\",\"last_updated\":\"2026-03-19T08:00:00Z\",\"assigned_team\":\"Search Infrastructure Team\",\"affected_region\":\"Global\",\"impact\":\"Slight increase in search latency\"}]}"
+    },
+    {
+        "source": "test_data.csv",
+        "content": "{'id': 1, 'status': 'failed', 'message': 'timeout error'}"
+    },
+    {
+        "source": "test_data.csv",
+        "content": "{'id': 2, 'status': 'success', 'message': 'ok'}"
+    },
+    {
+        "source": "test_data.csv",
+        "content": "{'id': 3, 'status': 'failed', 'message': 'database locked'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1001', 'Timestamp': '2026-03-19 08:15:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1002', 'Timestamp': '2026-03-19 08:30:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1003', 'Timestamp': '2026-03-19 08:45:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': \"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1004', 'Timestamp': '2026-03-19 09:10:00', 'Department': 'Customer Support', 'Issue_Type': 'Account Locked', 'Description': 'User cannot reset password. The password reset email is taking over 2 hours to arrive.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1005', 'Timestamp': '2026-03-19 09:25:00', 'Department': 'Logistics', 'Issue_Type': 'Late Delivery', 'Description': \"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets.\"}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1006', 'Timestamp': '2026-03-19 09:30:00', 'Department': 'IT Support', 'Issue_Type': 'Database Error', 'Description': 'URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1007', 'Timestamp': '2026-03-19 10:05:00', 'Department': 'Billing', 'Issue_Type': 'Refund Delay', 'Description': 'Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly.'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'TicketID': 'INC-1008', 'Timestamp': '2026-03-19 10:15:00', 'Department': 'Customer Support', 'Issue_Type': 'App Crash', 'Description': \"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update.\"}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0001', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 02:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0002', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 00:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0003', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-04 06:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0004', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 20:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0005', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-04 18:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0006', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 07:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0007', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-04 21:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0008', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-04 14:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0009', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 18:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0010', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 00:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0011', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 11:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0012', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 19:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0013', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-01 09:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0014', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 02:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0015', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 15:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0016', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-05 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0017', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-08 04:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0018', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 16:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0019', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-07 00:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0020', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-03 07:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0021', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-05 18:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0022', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-07 09:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0023', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 14:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0024', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-07 12:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0025', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-05 06:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0026', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-04 23:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0027', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-04 01:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0028', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-04 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0029', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 12:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0030', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-07 02:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0031', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 00:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0032', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 17:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0033', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 04:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0034', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 01:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0035', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-09 05:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0036', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-02 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0037', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-02 19:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0038', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 13:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0039', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-02 00:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0040', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0041', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-06 14:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0042', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 12:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0043', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 13:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0044', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-08 18:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0045', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 01:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0046', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 12:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0047', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0048', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0049', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-08 10:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0050', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 05:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0001', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 02:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0002', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 00:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0003', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-04 06:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0004', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 20:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0005', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-04 18:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0006', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 07:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0007', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-04 21:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0008', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-04 14:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0009', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 18:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0010', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 00:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0011', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 11:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0012', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 19:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0013', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-01 09:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0014', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 02:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0015', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 15:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0016', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-05 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0017', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-08 04:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0018', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 16:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0019', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-07 00:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0020', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-03 07:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0021', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-05 18:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0022', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-07 09:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0023', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 14:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0024', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-07 12:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0025', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-05 06:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0026', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-04 23:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0027', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-04 01:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0028', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-04 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0029', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 12:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0030', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-07 02:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0031', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 00:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0032', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 17:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0033', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 04:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0034', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 01:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0035', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-09 05:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0036', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-02 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0037', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-02 19:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0038', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 13:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0039', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-02 00:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0040', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0041', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-06 14:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0042', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 12:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0043', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 13:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0044', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-08 18:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0045', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 01:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0046', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 12:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0047', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0048', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0049', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-08 10:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0050', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 05:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0001', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 02:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0002', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 00:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0003', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-04 06:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0004', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 20:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0005', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-04 18:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0006', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 07:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0007', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-04 21:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0008', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-04 14:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0009', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 18:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0010', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 00:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0011', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 11:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0012', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 19:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0013', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-01 09:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0014', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 02:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0015', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 15:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0016', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-05 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0017', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-08 04:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0018', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 16:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0019', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-07 00:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0020', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-03 07:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0021', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-05 18:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0022', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-07 09:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0023', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 14:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0024', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-07 12:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0025', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-05 06:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0026', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-04 23:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0027', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-04 01:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0028', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-04 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0029', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 12:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0030', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-07 02:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0031', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 00:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0032', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 17:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0033', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 04:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0034', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 01:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0035', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-09 05:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0036', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-02 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0037', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-02 19:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0038', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 13:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0039', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-02 00:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0040', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0041', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-06 14:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0042', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 12:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0043', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 13:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0044', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-08 18:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0045', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 01:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0046', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 12:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0047', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0048', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0049', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-08 10:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0050', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 05:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0001', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 02:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0002', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 00:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0003', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-04 06:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0004', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 20:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0005', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-04 18:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0006', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 07:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0007', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-04 21:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0008', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-04 14:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0009', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 18:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0010', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 00:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0011', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 11:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0012', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 19:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0013', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-01 09:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0014', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 02:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0015', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 15:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0016', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-05 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0017', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-08 04:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0018', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 16:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0019', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-07 00:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0020', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-03 07:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0021', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-05 18:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0022', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-07 09:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0023', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 14:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0024', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-07 12:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0025', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-05 06:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0026', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-04 23:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0027', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-04 01:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0028', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-04 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0029', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 12:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0030', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-07 02:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0031', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 00:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0032', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 17:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0033', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 04:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0034', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 01:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0035', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-09 05:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0036', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-02 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0037', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-02 19:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0038', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 13:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0039', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-02 00:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0040', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0041', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-06 14:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0042', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 12:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0043', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 13:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0044', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-08 18:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0045', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 01:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0046', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 12:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0047', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0048', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0049', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-08 10:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0050', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 05:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0001', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 02:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0002', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 00:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0003', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-04 06:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0004', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 20:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0005', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-04 18:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0006', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 07:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0007', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-04 21:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0008', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-04 14:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0009', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 18:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0010', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 00:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0011', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-01 11:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0012', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-07 19:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0013', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-01 09:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0014', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 02:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0015', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-06 15:00:00', 'category': 'Website Crash', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0016', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-05 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0017', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-08 04:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0018', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-01 16:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0019', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-07 00:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0020', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-03 07:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0021', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-05 18:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0022', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-07 09:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0023', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 14:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0024', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-07 12:00:00', 'category': 'Delivery Delay', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0025', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-05 06:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0026', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-04 23:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0027', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-04 01:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0028', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-04 16:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0029', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 12:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0030', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-07 02:00:00', 'category': 'API Timeout', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0031', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 00:00:00', 'category': 'Stock Mismatch', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0032', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-05 17:00:00', 'category': 'Call Center Down', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0033', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 04:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0034', 'state': 'Resolved', 'priority': 'HIGH', 'duration': '2026-03-06 01:00:00', 'category': 'Duplicate Charge', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0035', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-09 05:00:00', 'category': 'Wrong Item', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0036', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-02 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0037', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-02 19:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0038', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 13:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0039', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-02 00:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0040', 'state': 'In Progress', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0041', 'state': 'Resolved', 'priority': 'LOW', 'duration': '2026-03-06 14:00:00', 'category': 'Slow Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0042', 'state': 'In Progress', 'priority': 'LOW', 'duration': '2026-03-07 12:00:00', 'category': 'Damaged Package', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0043', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 13:00:00', 'category': 'Payment Failure', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0044', 'state': 'Open', 'priority': 'MEDIUM', 'duration': '2026-03-08 18:00:00', 'category': 'Login Failure', 'department': 'IT'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0045', 'state': 'Resolved', 'priority': 'MEDIUM', 'duration': '2026-03-06 01:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0046', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-05 12:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0047', 'state': 'Open', 'priority': 'HIGH', 'duration': '2026-03-08 08:00:00', 'category': 'Lost Shipment', 'department': 'Logistics'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0048', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-06 06:00:00', 'category': 'No Response', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0049', 'state': 'Open', 'priority': 'LOW', 'duration': '2026-03-08 10:00:00', 'category': 'Defective Product', 'department': 'Inventory'}"
+    },
+    {
+        "source": "enterprise_aiops_dataset.csv",
+        "content": "{'id': 'T0050', 'state': 'In Progress', 'priority': 'MEDIUM', 'duration': '2026-03-09 05:00:00', 'category': 'Refund Delay', 'department': 'Payments'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'id': 'INC-1001', 'state': 'Unknown', 'priority': 'LOW', 'duration': '2026-03-19 08:15:00', 'category': 'Database Error', 'department': 'IT Support'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'id': 'INC-1002', 'state': 'Unknown', 'priority': 'LOW', 'duration': '2026-03-19 08:30:00', 'category': 'Refund Delay', 'department': 'Billing'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'id': 'INC-1003', 'state': 'Unknown', 'priority': 'LOW', 'duration': '2026-03-19 08:45:00', 'category': 'Database Error', 'department': 'IT Support'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'id': 'INC-1004', 'state': 'Unknown', 'priority': 'LOW', 'duration': '2026-03-19 09:10:00', 'category': 'Account Locked', 'department': 'Customer Support'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'id': 'INC-1005', 'state': 'Unknown', 'priority': 'LOW', 'duration': '2026-03-19 09:25:00', 'category': 'Late Delivery', 'department': 'Logistics'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'id': 'INC-1006', 'state': 'Unknown', 'priority': 'LOW', 'duration': '2026-03-19 09:30:00', 'category': 'Database Error', 'department': 'IT Support'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'id': 'INC-1007', 'state': 'Unknown', 'priority': 'LOW', 'duration': '2026-03-19 10:05:00', 'category': 'Refund Delay', 'department': 'Billing'}"
+    },
+    {
+        "source": "demo_dataset.csv",
+        "content": "{'id': 'INC-1008', 'state': 'Unknown', 'priority': 'LOW', 'duration': '2026-03-19 10:15:00', 'category': 'App Crash', 'department': 'Customer Support'}"
     }
 ]

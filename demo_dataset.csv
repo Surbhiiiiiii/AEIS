@@ -1,0 +1,9 @@
+TicketID,Timestamp,Department,Issue_Type,Description
+INC-1001,2026-03-19 08:15:00,IT Support,Database Error,"Multiple users reporting 'Connection Refused' errors when trying to save new client profiles."
+INC-1002,2026-03-19 08:30:00,Billing,Refund Delay,"Customer called extremely angry. Order #49281 was cancelled last week but the refund has not hit their credit card."
+INC-1003,2026-03-19 08:45:00,IT Support,Database Error,"Another alert for 'Connection Refused' during the morning sync job. The primary replica might be down."
+INC-1004,2026-03-19 09:10:00,Customer Support,Account Locked,"User cannot reset password. The password reset email is taking over 2 hours to arrive."
+INC-1005,2026-03-19 09:25:00,Logistics,Late Delivery,"Shipment tracking #ZA992 is showing as 'Delivered' but the customer claims their warehouse never received the pallets."
+INC-1006,2026-03-19 09:30:00,IT Support,Database Error,"URGENT: Database connection pool exhausted. API endpoints are returning 500 Internal Server Errors across the board."
+INC-1007,2026-03-19 10:05:00,Billing,Refund Delay,"Escalated ticket: VIP client threatening to cancel contract because their prorated refund was processed incorrectly."
+INC-1008,2026-03-19 10:15:00,Customer Support,App Crash,"The iOS application is crashing on launch for users on iOS 17.2 following yesterday's UI update."

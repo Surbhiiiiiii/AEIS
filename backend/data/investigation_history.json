@@ -1,5 +1,249 @@
 [
   {
+    "id": "INV-c4c485b4",
+    "goal": "Describe the issue and tell the solutions to it .!",
+    "detected_issue": "App Crash and Refund Delay in Customer Support",
+    "root_cause": "Database Error",
+    "severity": "High",
+    "recommended_action": "Implement database error handling mechanisms to prevent app crashes and refund delays.",
+    "insights": [
+      "Low frequency of App Crash incidents (1 occurrence) suggests a specific issue with iOS 17.2 users.",
+      "Refund Delay incidents are more frequent (2 occurrences), indicating a potential issue with billing or customer support processes.",
+      "Database Error is the top issue category, suggesting a critical underlying cause for operational incidents."
+    ],
+    "strategy_used": "['Analyze goal', 'Extract insights', 'Recommend action']",
+    "critic_score": 0.9,
+    "critic_quality": "Good",
+    "critic_feedback": "Investigate billing and customer support processes for potential issues.",
+    "timestamp": "2026-04-03T08:49:22.927264",
+    "duration": 693.5119662284851,
+    "user_email": "ssurbhisharma139@gmail.com"
+  },
+  {
+    "id": "INV-2c180ba9",
+    "goal": "Describe the issue and solutions to it .",
+    "detected_issue": "App Crash and Slow Response in Customer Support",
+    "root_cause": null,
+    "severity": "High",
+    "recommended_action": "Implement a more robust error handling mechanism to prevent app crashes and improve response times.",
+    "insights": [
+      "The top issue categories indicate that App Crash is a significant problem, with 10 occurrences.",
+      "The severity distribution shows that High-severity incidents are the most common, indicating a need for immediate attention.",
+      "The department impact suggests that Customer Support is heavily affected by these issues."
+    ],
+    "strategy_used": "['Analyze goal', 'Extract insights', 'Recommend action']",
+    "critic_score": 0.7,
+    "critic_quality": "Good",
+    "critic_feedback": "Investigate potential underlying causes for the app crashes and slow response times.",
+    "timestamp": "2026-03-24T09:21:01.779640",
+    "duration": 635.3881113529205,
+    "user_email": "surbhisurbhiai@gmail.com"
+  },
+  {
+    "id": "INV-2f9eabbe",
+    "goal": "Describe the issues and solutions for them.",
+    "detected_issue": "Ollama Offline or Timeout",
+    "root_cause": "The backend AI LLM service did not respond within 2000 seconds. The dataset might be too large for local generation.",
+    "severity": "High",
+    "recommended_action": "Check if Ollama is running and 'llama3' is pulled.",
+    "insights": [],
+    "strategy_used": "['Analyze goal', 'Extract insights', 'Recommend action']",
+    "critic_score": 0.0,
+    "critic_quality": "Needs improvement",
+    "critic_feedback": "",
+    "timestamp": "2026-03-24T09:05:50.470706",
+    "duration": 25.12350368499756,
+    "user_email": "surbhisurbhiai@gmail.com"
+  },
+  {
+    "id": "INV-84332537",
+    "goal": "Describe the issues and solutions for them.",
+    "detected_issue": "Ollama Offline or Timeout",
+    "root_cause": "The backend AI LLM service did not respond within 2000 seconds. The dataset might be too large for local generation.",
+    "severity": "High",
+    "recommended_action": "Check if Ollama is running and 'llama3' is pulled.",
+    "insights": [],
+    "strategy_used": "['Analyze goal', 'Extract insights', 'Recommend action']",
+    "critic_score": 0.0,
+    "critic_quality": "Needs improvement",
+    "critic_feedback": "",
+    "timestamp": "2026-03-24T09:04:03.674106",
+    "duration": 27.243852615356445,
+    "user_email": "surbhisurbhiai@gmail.com"
+  },
+  {
+    "id": "INV-be219db4",
+    "goal": "Describe the issues and solutions to them.",
+    "detected_issue": "Slow Response and Refund Delay in Customer Support",
+    "root_cause": "Lack of sufficient customer support staff",
+    "severity": "Medium",
+    "recommended_action": "Hire additional customer support staff to reduce response times and improve overall customer satisfaction",
+    "insights": [
+      "High priority incidents are mostly related to slow responses, indicating a need for improved staffing.",
+      "Customer Support is the most impacted department, suggesting that this issue is critical to resolve.",
+      "The frequency of 'progress' and 'resolved' keywords in top frequent terms indicates that customers are experiencing delays in receiving support."
+    ],
+    "timestamp": "2026-03-23T09:10:55.448469",
+    "duration": 640.4240877628326,
+    "user_email": "surbhisurbhiai@gmail.com"
+  },
+  {
+    "id": "INV-7f82b28f",
+    "goal": "Describe the issues and solutions to them.",
+    "detected_issue": "Ollama Offline or Timeout",
+    "root_cause": "The backend AI LLM service did not respond within 2000 seconds. The dataset might be too large for local generation.",
+    "severity": "High",
+    "recommended_action": "Check if Ollama is running and 'llama3' is pulled.",
+    "insights": [],
+    "timestamp": "2026-03-23T08:52:55.421685",
+    "duration": 57.120832681655884,
+    "user_email": "surbhisurbhiai@gmail.com"
+  },
+  {
+    "id": "INV-2142edbd",
+    "goal": "Investigate why the system is not showing recent incidents.",
+    "detected_issue": "No data provided for analysis.",
+    "root_cause": "Neither a dataset nor a URL was supplied.",
+    "severity": "Low",
+    "recommended_action": "Upload a CSV/Excel/JSON/PDF file or provide a URL to analyse.",
+    "insights": [
+      "Please supply a dataset or URL to enable data-driven analysis."
+    ],
+    "timestamp": "2026-03-23T08:45:30.381497",
+    "duration": 27.237349271774292,
+    "user_email": "admin@enterprise.ai"
+  },
+  {
+    "id": "INC-9376",
+    "goal": "",
+    "detected_issue": "System failures and critical service downtime detected in logs",
+    "root_cause": "Insufficient data analysis to determine underlying factors contributing to issue's severity and impact on operations",
+    "severity": "High",
+    "recommended_action": "Conduct thorough data analysis to identify root causes, prioritize concrete operational steps, and measure outcomes",
+    "timestamp": "2026-03-20T15:08:48.699771",
+    "duration": 832.9747457504272
+  },
+  {
+    "id": "INC-8534",
+    "goal": "Detect the issues and tell the solutions.",
+    "detected_issue": "System failures and critical service downtime detected",
+    "root_cause": "Database connection timeout (INC-10234) and High CPU usage on Kubernetes nodes (INC-10235)",
+    "severity": "High",
+    "recommended_action": "Investigate and resolve the database connection timeout issue to prevent further system failures, and optimize Kubernetes node performance to reduce CPU spikes",
+    "timestamp": "2026-03-20T14:35:28.340347",
+    "duration": 998.313009262085
+  },
+  {
+    "id": "INC-3060",
+    "goal": "Investigate.",
+    "detected_issue": "System failures and critical service downtime detected in logs.",
+    "root_cause": "Database connection timeout (INC-10234) causing payment processing unavailable.",
+    "severity": "High",
+    "recommended_action": "Investigate database connectivity issues and implement a solution to prevent future outages.",
+    "timestamp": "2026-03-20T09:35:19.407599",
+    "duration": 553.6199085712433
+  },
+  {
+    "id": "INC-2756",
+    "goal": "",
+    "detected_issue": "Backend AI LLM service unresponsiveness and system failures detected in logs",
+    "root_cause": "Historical Recurring Issue: The backend AI LLM service did not respond within 120 seconds.",
+    "severity": "High",
+    "recommended_action": "Investigate and resolve the root cause of the backend AI LLM service unresponsiveness to prevent further system failures",
+    "timestamp": "2026-03-20T09:09:04.574035",
+    "duration": 503.3280689716339
+  },
+  {
+    "id": "INC-5113",
+    "goal": "",
+    "detected_issue": "System failures and critical service downtime detected",
+    "root_cause": "The backend AI LLM service did not respond within 120 seconds.",
+    "severity": "High",
+    "recommended_action": "Investigate the root cause of the AI LLM service delay and implement measures to ensure timely response",
+    "timestamp": "2026-03-20T08:49:59.571606",
+    "duration": 442.47475695610046
+  },
+  {
+    "id": "INC-1117",
+    "goal": "Describe all the operational issues and the solutions for them .",
+    "detected_issue": "System Test Verification and AI LLM service response time issues",
+    "root_cause": "Historical Recurring Issues: System Test Verified (seen 2 times), The backend AI LLM service did not respond within 120 seconds. (seen 1 times) and The backend AI LLM service did not respond within 15 seconds. (seen 1 times)",
+    "severity": "Medium",
+    "recommended_action": "Investigate the root cause of these recurring issues to prevent future occurrences",
+    "timestamp": "2026-03-20T08:35:53.839511",
+    "duration": 574.12593126297
+  },
+  {
+    "id": "INC-7672",
+    "goal": "Describe all the operational issues and the solutions for them .",
+    "detected_issue": "Ollama Offline or Timeout",
+    "root_cause": "The backend AI LLM service did not respond within 120 seconds.",
+    "severity": "HIGH",
+    "recommended_action": "Check if Ollama is running and 'llama3' is pulled.",
+    "timestamp": "2026-03-20T08:20:49.816013",
+    "duration": 576.4789891242981
+  },
+  {
+    "id": "INC-8941",
+    "goal": "Describe all the operational issues and the solutions for them .",
+    "detected_issue": "Ollama Offline or Timeout",
+    "root_cause": "The backend AI LLM service did not respond within 15 seconds.",
+    "severity": "HIGH",
+    "recommended_action": "Check if Ollama is running and 'llama3' is pulled.",
+    "timestamp": "2026-03-20T08:02:54.360616",
+    "duration": 266.1044955253601
+  },
+  {
+    "id": "INC-3130",
+    "goal": "Find the root cause of the failures in this CSV logs dataset",
+    "detected_issue": "Database connection timeout and API gateway returning 502 errors are major operational issues",
+    "root_cause": "Unknown URL type: c> error in fetching CSV logs dataset",
+    "severity": "High",
+    "recommended_action": "Investigate and resolve the unknown URL type error to prevent future failures",
+    "timestamp": "2026-03-19T22:12:51.388706",
+    "duration": 570.0327849388123
+  },
+  {
+    "id": "INC-6406",
+    "goal": "analyze",
+    "detected_issue": "Delivery issues and Customer support unresponsiveness are causing significant disruptions.",
+    "root_cause": "Insufficient database connection and high CPU usage on Kubernetes nodes are likely contributing to these issues.",
+    "severity": "High",
+    "recommended_action": "Investigate and resolve the database connection timeout issue, and optimize CPU usage on Kubernetes nodes to prevent pod restarts.",
+    "timestamp": "2026-03-19T22:02:43.775720",
+    "duration": 825.644862651825
+  },
+  {
+    "id": "INC-1756",
+    "goal": "Find the root cause of the failures in this CSV logs dataset",
+    "detected_issue": "Database connection timeout and API gateway returning 502 errors are major operational issues",
+    "root_cause": "Insufficient database connections or network congestion causing timeouts and errors",
+    "severity": "High",
+    "recommended_action": "Increase database connections, optimize network configuration, and monitor for potential bottlenecks",
+    "timestamp": "2026-03-19T22:01:49.777868",
+    "duration": 1016.4346573352814
+  },
+  {
+    "id": "INC-5215",
+    "goal": "analyze",
+    "detected_issue": "Pipeline Mock Test Successful",
+    "root_cause": "System Test Verified",
+    "severity": "Low",
+    "recommended_action": "None",
+    "timestamp": "2026-03-19T21:55:03.303187",
+    "duration": 4.425276279449463
+  },
+  {
+    "id": "INC-5453",
+    "goal": "analyze",
+    "detected_issue": "Pipeline Mock Test Successful",
+    "root_cause": "System Test Verified",
+    "severity": "Low",
+    "recommended_action": "None",
+    "timestamp": "2026-03-19T21:54:26.494756",
+    "duration": 10.328385829925537
+  },
+  {
     "id": "INC-4757",
     "goal": "Analyze all the issues and tell the solution for them",
     "detected_issue": "Slow Response Time and High CPU usage on Kubernetes nodes are causing issues in Customer Support, Recommendation Engine, and API Gateway services.",

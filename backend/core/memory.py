@@ -1,119 +1,147 @@
-import json
-import os
+"""
+MongoDB-backed Memory system.
+Replaces JSON file storage with pymongo.
+API surface is backward-compatible with the old file-based Memory class.
+"""
+from datetime import datetime
+from core.database import memory_col
 
 class Memory:
-    def __init__(self, filename="data/memory.json"):
-        self.filename = filename
-        self._ensure_file_exists()
+    def __init__(self, filename=None):
+        # filename param kept for backward-compat, ignored
+        pass
 
-    def _ensure_file_exists(self):
-        os.makedirs(os.path.dirname(self.filename), exist_ok=True)
-        if not os.path.exists(self.filename):
-            with open(self.filename, "w", encoding="utf-8") as f:
-                json.dump({"events": [], "strategies": [], "prompts": {}}, f)
+    # ─── Events ──────────────────────────────────────────────────────────────
+
+    def add_event(self, agent: str, action: str, details: dict):
+        try:
+            memory_col().insert_one({
+                "type": "event",
+                "agent": agent,
+                "action": action,
+                "details": details,
+                "timestamp": datetime.utcnow().isoformat()
+            })
+        except Exception as e:
+            print(f"[Memory] add_event error: {e}")
 
     def get_events(self):
-        """Retrieves only the event history."""
         try:
-            with open(self.filename, "r", encoding="utf-8") as f:
-                memory_data = json.load(f)
-                return memory_data.get("events", [])
-        except (FileNotFoundError, json.JSONDecodeError):
+            docs = list(memory_col().find(
+                {"type": "event"},
+                {"_id": 0}
+            ).sort("timestamp", -1).limit(200))
+            return docs
+        except Exception as e:
+            print(f"[Memory] get_events error: {e}")
             return []
 
     def get_context(self):
-        """Alias for get_events for backward compatibility."""
-        return self.get_events()
+        """Alias for get_events (backward compat)."""
+        return list(reversed(self.get_events()[:50]))
+
+    # ─── Strategies ──────────────────────────────────────────────────────────
 
     def add_strategy(self, goal: str, strategy: dict):
-        """Stores a successful strategy."""
         try:
-            with open(self.filename, "r", encoding="utf-8") as f:
-                memory_data = json.load(f)
-                if not isinstance(memory_data, dict): memory_data = {}
-        except (FileNotFoundError, json.JSONDecodeError):
-            memory_data = {}
-
-        strategies = memory_data.get("strategies", [])
-        if not isinstance(strategies, list): strategies = []
-            
-        strategies.append({
-            "goal": goal,
-            "strategy": strategy
-        })
-        memory_data["strategies"] = strategies
-
-        with open(self.filename, "w", encoding="utf-8") as f:
-            json.dump(memory_data, f, indent=4)
+            memory_col().insert_one({
+                "type": "strategy",
+                "goal": goal,
+                "strategy": strategy,
+                "timestamp": datetime.utcnow().isoformat()
+            })
+        except Exception as e:
+            print(f"[Memory] add_strategy error: {e}")
 
     def get_strategies(self):
-        """Retrieves stored strategies."""
         try:
-            with open(self.filename, "r", encoding="utf-8") as f:
-                memory_data = json.load(f)
-                return memory_data.get("strategies", [])
-        except (FileNotFoundError, json.JSONDecodeError):
+            docs = list(memory_col().find(
+                {"type": "strategy"},
+                {"_id": 0}
+            ).sort("timestamp", -1).limit(50))
+            return docs
+        except Exception as e:
             return []
-            
+
+    # ─── Prompts ─────────────────────────────────────────────────────────────
+
     def update_prompt(self, agent: str, optimized_prompt: str):
-        """Stores an optimized prompt for an agent."""
+        if not optimized_prompt or len(optimized_prompt.strip()) < 15 or "{" in optimized_prompt:
+            print(f"[Memory] Prompt for {agent} rejected by safeguard.")
+            return
         try:
-            with open(self.filename, "r", encoding="utf-8") as f:
-                memory_data = json.load(f)
-                if not isinstance(memory_data, dict): memory_data = {}
-        except (FileNotFoundError, json.JSONDecodeError):
-            memory_data = {}
+            memory_col().update_one(
+                {"type": "prompt", "agent": agent},
+                {"$set": {
+                    "type": "prompt",
+                    "agent": agent,
+                    "prompt": optimized_prompt,
+                    "updated_at": datetime.utcnow().isoformat()
+                }},
+                upsert=True
+            )
+        except Exception as e:
+            print(f"[Memory] update_prompt error: {e}")
 
-        prompts = memory_data.get("prompts", {})
-        if not isinstance(prompts, dict): prompts = {}
-            
-        prompts[agent] = optimized_prompt
-        memory_data["prompts"] = prompts
-
-        with open(self.filename, "w", encoding="utf-8") as f:
-            json.dump(memory_data, f, indent=4)
-
-    def get_prompt(self, agent: str, default_prompt: str = ""):
-        """Retrieves the optimized prompt for an agent, or returns the default."""
+    def get_prompt(self, agent: str, default_prompt: str = "") -> str:
         try:
-            with open(self.filename, "r", encoding="utf-8") as f:
-                memory_data = json.load(f)
-                return memory_data.get("prompts", {}).get(agent, default_prompt)
-        except (FileNotFoundError, json.JSONDecodeError):
-            return default_prompt
+            doc = memory_col().find_one({"type": "prompt", "agent": agent})
+            if doc:
+                return doc.get("prompt", default_prompt)
+        except Exception:
+            pass
+        return default_prompt
 
-    def get_prompts(self):
-        """Retrieves all optimized prompts."""
+    def get_prompts(self) -> dict:
         try:
-            with open(self.filename, "r", encoding="utf-8") as f:
-                memory_data = json.load(f)
-                return memory_data.get("prompts", {})
-        except (FileNotFoundError, json.JSONDecodeError):
+            docs = list(memory_col().find({"type": "prompt"}, {"_id": 0}))
+            return {d["agent"]: d["prompt"] for d in docs if "agent" in d and "prompt" in d}
+        except Exception:
             return {}
 
-    def add_event(self, agent: str, action: str, details: dict):
-        """Stores a new event in memory."""
-        try:
-            with open(self.filename, "r", encoding="utf-8") as f:
-                memory_data = json.load(f)
-                if not isinstance(memory_data, dict): memory_data = {}
-        except (FileNotFoundError, json.JSONDecodeError):
-            memory_data = {}
-            
-        events = memory_data.get("events", [])
-        if not isinstance(events, list): events = []
-        
-        events.append({
-            "agent": agent,
-            "action": action,
-            "details": details
-        })
-        memory_data["events"] = events
+    # ─── Past Investigation Retrieval ────────────────────────────────────────
 
-        with open(self.filename, "w", encoding="utf-8") as f:
-            json.dump(memory_data, f, indent=4)
+    def get_past_investigations(self, limit: int = 5) -> list:
+        """
+        Retrieves recent investigation records from MongoDB.
+        Used by PlannerAgent to inform planning based on past outcomes.
+        Returns list of dicts with: goal, detected_issue, severity, recommended_action, critic_score.
+        """
+        try:
+            from core.database import agent_performance_col
+            docs = list(
+                agent_performance_col()
+                .find({}, {"_id": 0})
+                .sort("timestamp", -1)
+                .limit(limit)
+            )
+            return docs
+        except Exception as e:
+            print(f"[Memory] get_past_investigations error: {e}")
+            return []
+
+    def get_successful_strategies(self, min_score: float = 0.7, limit: int = 5) -> list:
+        """
+        Retrieves past strategies that received a high critic score.
+        Used by PlannerAgent to reuse proven approaches.
+        """
+        try:
+            from core.database import agent_performance_col
+            docs = list(
+                agent_performance_col()
+                .find({"critic_score": {"$gte": min_score}}, {"_id": 0})
+                .sort("critic_score", -1)
+                .limit(limit)
+            )
+            return docs
+        except Exception as e:
+            print(f"[Memory] get_successful_strategies error: {e}")
+            return []
+
+    # ─── Utilities ───────────────────────────────────────────────────────────
 
     def clear(self):
-        """Clears the memory."""
-        with open(self.filename, "w", encoding="utf-8") as f:
-            json.dump({"events": [], "strategies": [], "prompts": {}}, f)
+        try:
+            memory_col().delete_many({"type": {"$in": ["event", "strategy"]}})
+        except Exception as e:
+            print(f"[Memory] clear error: {e}")

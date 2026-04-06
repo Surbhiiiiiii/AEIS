@@ -1,18 +1,21 @@
-def fetch_tickets():
+"""
+data_fetcher.py
+---------------
+Fetches real incident records from MongoDB `incidents` collection.
+Returns empty list if MongoDB is unavailable or collection is empty.
+NO hardcoded / fake ticket data.
+"""
+from core.database import incidents_col
 
-    tickets = [
 
-        {"ticket_id": 1, "message": "My order has not been delivered after 5 days"},
-        {"ticket_id": 2, "message": "Refund for damaged product not processed"},
-        {"ticket_id": 3, "message": "Customer support is not responding to emails"},
-        {"ticket_id": 4, "message": "Delivery arrived late and packaging was broken"},
-        {"ticket_id": 5, "message": "Received the wrong item in my order"},
-        {"ticket_id": 6, "message": "Payment deducted but order not confirmed"},
-        {"ticket_id": 7, "message": "Product quality is very poor"},
-        {"ticket_id": 8, "message": "Order tracking system is not updating"},
-        {"ticket_id": 9, "message": "Refund process taking too long"},
-        {"ticket_id": 10, "message": "Customer support call center unreachable"}
-
-    ]
-
-    return tickets
+def fetch_tickets() -> list[dict]:
+    """
+    Fetch incidents from MongoDB `incidents` collection.
+    Returns a list of incident dicts, or [] if unavailable.
+    """
+    try:
+        docs = list(incidents_col().find({}, {"_id": 0}).limit(50))
+        return docs
+    except Exception as e:
+        print(f"[data_fetcher] MongoDB unavailable: {e}")
+        return []

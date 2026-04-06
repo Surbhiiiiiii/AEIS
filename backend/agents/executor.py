@@ -55,4 +55,14 @@ Example: {{"severity": "HIGH", "action": "Escalation created"}}
         if self.memory:
             self.memory.add_event("ExecutorAgent", "Executed action", final_result)
 
+        # LOOPHOLE PATCH 1: Actual Execution
+        import os
+        alerts_file = os.path.join(os.path.dirname(__file__), "..", "data", "alerts_log.txt")
+        os.makedirs(os.path.dirname(alerts_file), exist_ok=True)
+        try:
+            with open(alerts_file, "a", encoding="utf-8") as f:
+                f.write(f"[{final_result.get('timestamp')}] {final_result.get('severity')} ALARM - ACTION TRIGGERED: {final_result.get('action')}\n")
+        except Exception as e:
+            print("Failed to write alert log:", e)
+
         return final_result
