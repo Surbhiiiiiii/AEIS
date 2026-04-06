@@ -62,6 +62,10 @@ if not _raw_origins or _raw_origins == "*":
     _allow_credentials = False
 else:
     _allowed_origins = [o.strip() for o in _raw_origins.split(",") if o.strip()]
+    if "http://localhost:3000" not in _allowed_origins:
+        _allowed_origins.append("http://localhost:3000")
+    if "https://enterprise-dashboard-hhkn.vercel.app" not in _allowed_origins:
+        _allowed_origins.append("https://enterprise-dashboard-hhkn.vercel.app")
     _allow_credentials = True
 
 app.add_middleware(
