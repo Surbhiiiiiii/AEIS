@@ -1,13 +1,19 @@
 """
 Authentication utilities: password hashing, JWT, OTP generation and email.
+
+Email strategy (in priority order):
+  1. Gmail SMTP  — if SMTP_USER + SMTP_PASS are set (sends to ANY email, free)
+  2. Resend API  — if RESEND_API_KEY is set (only works to verified recipients on free plan)
+  3. Console log — if neither is configured (dev/test fallback)
 """
 import os
 import random
 import string
 import threading
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
-
-import resend
 
 from passlib.context import CryptContext
 from jose import JWTError, jwt
@@ -18,11 +24,6 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 SECRET_KEY = os.getenv("JWT_SECRET_KEY", "enterprise-ai-super-secret-key-change-in-prod")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 24
-
-# NOTE: Do NOT read RESEND_API_KEY here at module import time.
-# load_dotenv() in main.py runs AFTER Python imports core.auth,
-# so os.getenv() would return "" here. The key is read dynamically
-# inside _send_email_sync() where it is guaranteed to be available.
 
 # --- Bcrypt context ---
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -99,37 +100,82 @@ def verify_otp(email: str, otp: str) -> bool:
 
 # ─── Email ───────────────────────────────────────────────────────────────────
 
-def _send_email_sync(to_email: str, subject: str, html_body: str):
-    """Send email synchronously via Resend API (run in background thread).
-    
-    Key is read dynamically here — NOT at module import time — so it always
-    picks up the correct value after load_dotenv() has populated os.environ.
-    """
+def _send_via_gmail(to_email: str, subject: str, html_body: str) -> bool:
+    """Send via Gmail SMTP. Returns True on success."""
+    smtp_user = os.getenv("SMTP_USER", "").strip()
+    smtp_pass = os.getenv("SMTP_PASS", "").strip()
+    smtp_host = os.getenv("SMTP_HOST", "smtp.gmail.com")
+    smtp_port = int(os.getenv("SMTP_PORT", "587"))
+
+    if not smtp_user or not smtp_pass:
+        return False  # not configured
+
+    try:
+        msg = MIMEMultipart("alternative")
+        msg["Subject"] = subject
+        msg["From"] = f"Enterprise AI Platform <{smtp_user}>"
+        msg["To"] = to_email
+        msg.attach(MIMEText(html_body, "html"))
+
+        with smtplib.SMTP(smtp_host, smtp_port, timeout=15) as server:
+            server.ehlo()
+            server.starttls()
+            server.login(smtp_user, smtp_pass)
+            server.sendmail(smtp_user, [to_email], msg.as_string())
+
+        print(f"[EMAIL] ✅ Sent to {to_email} via Gmail SMTP ({smtp_user})")
+        return True
+    except Exception as e:
+        print(f"[EMAIL ERROR] ❌ Gmail SMTP failed for {to_email}: {e}")
+        return False
+
+
+def _send_via_resend(to_email: str, subject: str, html_body: str) -> bool:
+    """Send via Resend API. Returns True on success."""
     api_key = os.getenv("RESEND_API_KEY", "").strip()
     from_addr = os.getenv("RESEND_FROM", "Enterprise AI <onboarding@resend.dev>")
 
     if not api_key:
-        print(f"\n{'─'*60}")
-        print(f"[EMAIL SIMULATION] No RESEND_API_KEY set.")
-        print(f"[EMAIL SIMULATION] TO: {to_email}")
-        print(f"[EMAIL SIMULATION] SUBJECT: {subject}")
-        print(f"[EMAIL SIMULATION] BODY PREVIEW: {html_body[:200]}")
-        print(f"{'─'*60}\n")
-        return
+        return False  # not configured
 
     try:
-        resend.api_key = api_key  # Set right before use — always fresh
+        import resend as resend_lib
+        resend_lib.api_key = api_key
         params = {
             "from": from_addr,
             "to": [to_email],
             "subject": subject,
             "html": html_body,
         }
-        response = resend.Emails.send(params)
+        response = resend_lib.Emails.send(params)
         email_id = response.get("id") if isinstance(response, dict) else str(response)
         print(f"[EMAIL] ✅ Sent to {to_email} via Resend | id={email_id}")
+        return True
     except Exception as e:
         print(f"[EMAIL ERROR] ❌ Resend failed for {to_email}: {e}")
+        return False
+
+
+def _send_email_sync(to_email: str, subject: str, html_body: str):
+    """
+    Send email with automatic provider fallback:
+      1. Gmail SMTP  (works with any recipient — requires SMTP_USER + SMTP_PASS)
+      2. Resend API  (free tier only delivers to the Resend account owner's email)
+      3. Console log (dev fallback — prints OTP to terminal)
+    """
+    # Try Gmail SMTP first — works for all recipients
+    if _send_via_gmail(to_email, subject, html_body):
+        return
+
+    # Try Resend as fallback
+    if _send_via_resend(to_email, subject, html_body):
+        return
+
+    # Last resort: print to console
+    print(f"\n{'─'*60}")
+    print(f"[EMAIL FALLBACK] No email provider configured.")
+    print(f"[EMAIL FALLBACK] TO: {to_email} | SUBJECT: {subject}")
+    print(f"{'─'*60}\n")
 
 
 def send_email_async(to_email: str, subject: str, html_body: str):
@@ -149,6 +195,7 @@ def send_otp_email(email: str, otp: str, username: str):
         <span style="font-size:36px;font-weight:bold;letter-spacing:12px;color:#38bdf8;background:#1e2a3a;padding:16px 24px;border-radius:8px;">{otp}</span>
       </div>
       <p style="color:#94a3b8;font-size:13px;">This OTP expires in <strong>10 minutes</strong>. Do not share it.</p>
+      <p style="color:#64748b;font-size:11px;text-align:center;margin-top:24px;">Enterprise AI — Autonomous Intelligence Platform</p>
     </div>
     """
     print(f"\n{'═'*60}")
