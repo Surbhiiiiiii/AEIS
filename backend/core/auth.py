@@ -19,9 +19,10 @@ SECRET_KEY = os.getenv("JWT_SECRET_KEY", "enterprise-ai-super-secret-key-change-
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 24
 
-RESEND_API_KEY = os.getenv("RESEND_API_KEY", "")
-RESEND_FROM = os.getenv("RESEND_FROM", "Enterprise AI <onboarding@resend.dev>")
-resend.api_key = RESEND_API_KEY
+# NOTE: Do NOT read RESEND_API_KEY here at module import time.
+# load_dotenv() in main.py runs AFTER Python imports core.auth,
+# so os.getenv() would return "" here. The key is read dynamically
+# inside _send_email_sync() where it is guaranteed to be available.
 
 # --- Bcrypt context ---
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -99,8 +100,15 @@ def verify_otp(email: str, otp: str) -> bool:
 # ─── Email ───────────────────────────────────────────────────────────────────
 
 def _send_email_sync(to_email: str, subject: str, html_body: str):
-    """Send email synchronously via Resend API (run in thread)."""
-    if not RESEND_API_KEY:
+    """Send email synchronously via Resend API (run in background thread).
+    
+    Key is read dynamically here — NOT at module import time — so it always
+    picks up the correct value after load_dotenv() has populated os.environ.
+    """
+    api_key = os.getenv("RESEND_API_KEY", "").strip()
+    from_addr = os.getenv("RESEND_FROM", "Enterprise AI <onboarding@resend.dev>")
+
+    if not api_key:
         print(f"\n{'─'*60}")
         print(f"[EMAIL SIMULATION] No RESEND_API_KEY set.")
         print(f"[EMAIL SIMULATION] TO: {to_email}")
@@ -108,22 +116,27 @@ def _send_email_sync(to_email: str, subject: str, html_body: str):
         print(f"[EMAIL SIMULATION] BODY PREVIEW: {html_body[:200]}")
         print(f"{'─'*60}\n")
         return
+
     try:
+        resend.api_key = api_key  # Set right before use — always fresh
         params = {
-            "from": RESEND_FROM,
+            "from": from_addr,
             "to": [to_email],
             "subject": subject,
             "html": html_body,
         }
         response = resend.Emails.send(params)
-        print(f"[EMAIL] Sent to {to_email} via Resend | id={response.get('id')}")
+        email_id = response.get("id") if isinstance(response, dict) else str(response)
+        print(f"[EMAIL] ✅ Sent to {to_email} via Resend | id={email_id}")
     except Exception as e:
-        print(f"[EMAIL ERROR] Resend failed for {to_email}: {e}")
+        print(f"[EMAIL ERROR] ❌ Resend failed for {to_email}: {e}")
+
 
 def send_email_async(to_email: str, subject: str, html_body: str):
     """Fire-and-forget email using a background thread."""
     t = threading.Thread(target=_send_email_sync, args=(to_email, subject, html_body), daemon=True)
     t.start()
+
 
 def send_otp_email(email: str, otp: str, username: str):
     subject = "🔐 Your Enterprise AI Platform OTP Code"
