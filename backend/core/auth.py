@@ -1,10 +1,12 @@
 """
 Authentication utilities: password hashing, JWT, OTP generation and email.
 
-Email strategy (in priority order):
-  1. Gmail SMTP  — if SMTP_USER + SMTP_PASS are set (sends to ANY email, free)
-  2. Resend API  — if RESEND_API_KEY is set (only works to verified recipients on free plan)
-  3. Console log — if neither is configured (dev/test fallback)
+OTP Storage: MongoDB-backed (survives Render restarts and multi-worker deployments).
+Email Strategy (priority order):
+  1. Gmail SMTP port 465/SSL — not blocked by Render free tier
+  2. Gmail SMTP port 587/STARTTLS — fallback
+  3. Resend API — fallback (free tier: only delivers to Resend account owner)
+  4. Console log — dev fallback
 """
 import os
 import random
@@ -20,20 +22,32 @@ from jose import JWTError, jwt
 from fastapi import HTTPException, status, Security
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
-# --- Config ---
+# ─── Config ──────────────────────────────────────────────────────────────────
 SECRET_KEY = os.getenv("JWT_SECRET_KEY", "enterprise-ai-super-secret-key-change-in-prod")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_HOURS = 24
+OTP_EXPIRY_MINUTES = 10
+OTP_MAX_ATTEMPTS = 5
 
-# --- Bcrypt context ---
+# ─── Auth context ─────────────────────────────────────────────────────────────
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 bearer_scheme = HTTPBearer(auto_error=False)
 
-# --- In-memory OTP store: {email: {"otp": str, "expires": datetime}} ---
-_otp_store: dict = {}
+
+# ─── Helpers: get MongoDB collections lazily ─────────────────────────────────
+def _otp_col():
+    from core.database import get_db
+    return get_db()["otp_store"]
+
+def _ensure_otp_index():
+    """Create TTL index on otp_store so MongoDB auto-expires documents."""
+    try:
+        _otp_col().create_index("expires_at", expireAfterSeconds=0)
+    except Exception:
+        pass  # index already exists or DB unavailable
 
 
-# ─── Password ────────────────────────────────────────────────────────────────
+# ─── Password ─────────────────────────────────────────────────────────────────
 
 def hash_password(password: str) -> str:
     return pwd_context.hash(password)
@@ -42,27 +56,21 @@ def verify_password(plain: str, hashed: str) -> bool:
     return pwd_context.verify(plain, hashed)
 
 
-# ─── JWT ─────────────────────────────────────────────────────────────────────
+# ─── JWT ──────────────────────────────────────────────────────────────────────
 
 def create_jwt(username: str, role: str, email: str) -> str:
     expire = datetime.utcnow() + timedelta(hours=ACCESS_TOKEN_EXPIRE_HOURS)
-    payload = {
-        "sub": username,
-        "role": role,
-        "email": email,
-        "exp": expire
-    }
+    payload = {"sub": username, "role": role, "email": email, "exp": expire}
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
 def decode_jwt(token: str) -> dict:
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        return payload
+        return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
     except JWTError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid or expired token",
-            headers={"WWW-Authenticate": "Bearer"}
+            headers={"WWW-Authenticate": "Bearer"},
         )
 
 def get_current_user(credentials: HTTPAuthorizationCredentials = Security(bearer_scheme)):
@@ -70,117 +78,181 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Security(bearer
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Authentication required",
-            headers={"WWW-Authenticate": "Bearer"}
+            headers={"WWW-Authenticate": "Bearer"},
         )
     return decode_jwt(credentials.credentials)
 
 
-# ─── OTP ─────────────────────────────────────────────────────────────────────
+# ─── OTP (MongoDB-backed — survives restarts & multi-worker) ──────────────────
 
 def generate_otp(email: str) -> str:
+    """
+    Generate a 6-digit OTP, store it in MongoDB with a TTL expiry.
+    Previous OTP for this email is overwritten (safe resend).
+    """
     otp = "".join(random.choices(string.digits, k=6))
-    _otp_store[email] = {
-        "otp": otp,
-        "expires": datetime.utcnow() + timedelta(minutes=10)
-    }
+    expires_at = datetime.utcnow() + timedelta(minutes=OTP_EXPIRY_MINUTES)
+
+    try:
+        _otp_col().replace_one(
+            {"email": email},
+            {
+                "email": email,
+                "otp": otp,
+                "expires_at": expires_at,        # used by MongoDB TTL index
+                "created_at": datetime.utcnow().isoformat(),
+                "attempts": 0,
+            },
+            upsert=True,
+        )
+    except Exception as e:
+        print(f"[OTP] MongoDB write failed, using in-memory fallback: {e}")
+        # In-memory fallback so registration never hard-breaks
+        _otp_fallback[email] = {"otp": otp, "expires": expires_at, "attempts": 0}
+
     return otp
 
-def verify_otp(email: str, otp: str) -> bool:
-    record = _otp_store.get(email)
+
+# In-memory fallback (only used if MongoDB is unavailable)
+_otp_fallback: dict = {}
+
+
+def verify_otp(email: str, otp_input: str) -> tuple[bool, str]:
+    """
+    Verify OTP. Returns (success: bool, error_message: str).
+    Error messages: "", "not_found", "expired", "invalid", "max_attempts"
+    """
+    record = None
+
+    # Try MongoDB first
+    try:
+        record = _otp_col().find_one({"email": email})
+    except Exception as e:
+        print(f"[OTP] MongoDB read failed: {e}")
+
+    # Fall back to in-memory
+    if record is None:
+        fb = _otp_fallback.get(email)
+        if fb:
+            record = fb
+            record["_from_fallback"] = True
+
     if not record:
-        return False
-    if datetime.utcnow() > record["expires"]:
-        del _otp_store[email]
-        return False
-    if record["otp"] != otp:
-        return False
-    del _otp_store[email]
-    return True
+        return False, "not_found"
+
+    # Check expiry (belt-and-suspenders — MongoDB TTL may have a ~60s lag)
+    expires = record.get("expires_at") or record.get("expires")
+    if expires and datetime.utcnow() > expires:
+        _delete_otp(email, record.get("_from_fallback", False))
+        return False, "expired"
+
+    # Check attempt limit
+    attempts = record.get("attempts", 0)
+    if attempts >= OTP_MAX_ATTEMPTS:
+        _delete_otp(email, record.get("_from_fallback", False))
+        return False, "max_attempts"
+
+    # Check value
+    if record.get("otp", "") != otp_input.strip():
+        # Increment attempt counter
+        try:
+            _otp_col().update_one({"email": email}, {"$inc": {"attempts": 1}})
+        except Exception:
+            if email in _otp_fallback:
+                _otp_fallback[email]["attempts"] = attempts + 1
+        remaining = OTP_MAX_ATTEMPTS - attempts - 1
+        return False, f"invalid:{remaining}"
+
+    # ✅ Correct OTP — delete it (one-time use)
+    _delete_otp(email, record.get("_from_fallback", False))
+    return True, ""
 
 
-# ─── Email ───────────────────────────────────────────────────────────────────
+def _delete_otp(email: str, from_fallback: bool = False):
+    if from_fallback:
+        _otp_fallback.pop(email, None)
+        return
+    try:
+        _otp_col().delete_one({"email": email})
+    except Exception:
+        _otp_fallback.pop(email, None)
+
+
+# ─── Email ────────────────────────────────────────────────────────────────────
 
 def _send_via_gmail(to_email: str, subject: str, html_body: str) -> bool:
-    """Send via Gmail SMTP. Returns True on success."""
+    """Try port 465 (SSL, not blocked by Render), then 587 (STARTTLS)."""
     smtp_user = os.getenv("SMTP_USER", "").strip()
     smtp_pass = os.getenv("SMTP_PASS", "").strip()
     smtp_host = os.getenv("SMTP_HOST", "smtp.gmail.com")
-    smtp_port = int(os.getenv("SMTP_PORT", "587"))
 
     if not smtp_user or not smtp_pass:
-        return False  # not configured
+        return False
 
+    msg = MIMEMultipart("alternative")
+    msg["Subject"] = subject
+    msg["From"] = f"Enterprise AI Platform <{smtp_user}>"
+    msg["To"] = to_email
+    msg.attach(MIMEText(html_body, "html"))
+
+    # Attempt 1: port 465 SSL (works on Render free tier)
     try:
-        msg = MIMEMultipart("alternative")
-        msg["Subject"] = subject
-        msg["From"] = f"Enterprise AI Platform <{smtp_user}>"
-        msg["To"] = to_email
-        msg.attach(MIMEText(html_body, "html"))
+        with smtplib.SMTP_SSL(smtp_host, 465, timeout=15) as server:
+            server.login(smtp_user, smtp_pass)
+            server.sendmail(smtp_user, [to_email], msg.as_string())
+        print(f"[EMAIL] ✅ Sent to {to_email} via Gmail SSL:465")
+        return True
+    except Exception as e1:
+        print(f"[EMAIL] Port 465 failed ({e1}), trying 587...")
 
-        with smtplib.SMTP(smtp_host, smtp_port, timeout=15) as server:
+    # Attempt 2: port 587 STARTTLS
+    try:
+        with smtplib.SMTP(smtp_host, 587, timeout=15) as server:
             server.ehlo()
             server.starttls()
             server.login(smtp_user, smtp_pass)
             server.sendmail(smtp_user, [to_email], msg.as_string())
-
-        print(f"[EMAIL] ✅ Sent to {to_email} via Gmail SMTP ({smtp_user})")
+        print(f"[EMAIL] ✅ Sent to {to_email} via Gmail STARTTLS:587")
         return True
-    except Exception as e:
-        print(f"[EMAIL ERROR] ❌ Gmail SMTP failed for {to_email}: {e}")
+    except Exception as e2:
+        print(f"[EMAIL ERROR] ❌ Gmail SMTP failed entirely: 465={e1}, 587={e2}")
         return False
 
 
 def _send_via_resend(to_email: str, subject: str, html_body: str) -> bool:
-    """Send via Resend API. Returns True on success."""
     api_key = os.getenv("RESEND_API_KEY", "").strip()
     from_addr = os.getenv("RESEND_FROM", "Enterprise AI <onboarding@resend.dev>")
-
     if not api_key:
-        return False  # not configured
-
+        return False
     try:
         import resend as resend_lib
         resend_lib.api_key = api_key
-        params = {
-            "from": from_addr,
-            "to": [to_email],
-            "subject": subject,
-            "html": html_body,
-        }
-        response = resend_lib.Emails.send(params)
+        response = resend_lib.Emails.send({
+            "from": from_addr, "to": [to_email],
+            "subject": subject, "html": html_body,
+        })
         email_id = response.get("id") if isinstance(response, dict) else str(response)
         print(f"[EMAIL] ✅ Sent to {to_email} via Resend | id={email_id}")
         return True
     except Exception as e:
-        print(f"[EMAIL ERROR] ❌ Resend failed for {to_email}: {e}")
+        print(f"[EMAIL ERROR] ❌ Resend failed: {e}")
         return False
 
 
 def _send_email_sync(to_email: str, subject: str, html_body: str):
-    """
-    Send email with automatic provider fallback:
-      1. Gmail SMTP  (works with any recipient — requires SMTP_USER + SMTP_PASS)
-      2. Resend API  (free tier only delivers to the Resend account owner's email)
-      3. Console log (dev fallback — prints OTP to terminal)
-    """
-    # Try Gmail SMTP first — works for all recipients
     if _send_via_gmail(to_email, subject, html_body):
         return
-
-    # Try Resend as fallback
     if _send_via_resend(to_email, subject, html_body):
         return
-
-    # Last resort: print to console
     print(f"\n{'─'*60}")
-    print(f"[EMAIL FALLBACK] No email provider configured.")
-    print(f"[EMAIL FALLBACK] TO: {to_email} | SUBJECT: {subject}")
+    print(f"[EMAIL FALLBACK] No provider worked. TO: {to_email}")
     print(f"{'─'*60}\n")
 
 
 def send_email_async(to_email: str, subject: str, html_body: str):
-    """Fire-and-forget email using a background thread."""
-    t = threading.Thread(target=_send_email_sync, args=(to_email, subject, html_body), daemon=True)
+    t = threading.Thread(
+        target=_send_email_sync, args=(to_email, subject, html_body), daemon=True
+    )
     t.start()
 
 
@@ -194,12 +266,15 @@ def send_otp_email(email: str, otp: str, username: str):
       <div style="text-align:center;margin:24px 0;">
         <span style="font-size:36px;font-weight:bold;letter-spacing:12px;color:#38bdf8;background:#1e2a3a;padding:16px 24px;border-radius:8px;">{otp}</span>
       </div>
-      <p style="color:#94a3b8;font-size:13px;">This OTP expires in <strong>10 minutes</strong>. Do not share it.</p>
+      <p style="color:#94a3b8;font-size:13px;">
+        This OTP expires in <strong>10 minutes</strong>.<br/>
+        You have <strong>{OTP_MAX_ATTEMPTS} attempts</strong> before it is invalidated.
+      </p>
       <p style="color:#64748b;font-size:11px;text-align:center;margin-top:24px;">Enterprise AI — Autonomous Intelligence Platform</p>
     </div>
     """
     print(f"\n{'═'*60}")
-    print(f"[OTP] Email: {email}  |  OTP CODE: {otp}")
+    print(f"[OTP] ▶ Email: {email}  |  CODE: {otp}  |  Expires: {OTP_EXPIRY_MINUTES}min")
     print(f"{'═'*60}\n")
     send_email_async(email, subject, html_body)
 

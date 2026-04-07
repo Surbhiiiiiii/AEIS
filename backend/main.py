@@ -11,7 +11,7 @@ import os
 import json
 import asyncio
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from collections import deque
 
 from core.orchestrator import run_enterprise_system
@@ -19,7 +19,8 @@ from core.memory import Memory
 from core.database import users_col, investigations_col, alerts_col, ensure_indexes, db_health_check, reset_client
 from core.auth import (
     hash_password, verify_password, create_jwt, get_current_user,
-    generate_otp, verify_otp, send_otp_email
+    generate_otp, verify_otp, send_otp_email,
+    _ensure_otp_index
 )
 from bson import ObjectId
 
@@ -46,6 +47,44 @@ class ConnectionManager:
                 pass
 
 manager = ConnectionManager()
+
+# ── Pending Registration Store (MongoDB-backed) ───────────────────────────────
+# User records live in MongoDB pending_registrations (TTL 15min) until OTP
+# is verified. This survives Render restarts and multi-worker deployments.
+
+def _pending_col():
+    from core.database import get_db
+    return get_db()["pending_registrations"]
+
+def _ensure_pending_index():
+    try:
+        _pending_col().create_index("expires_at", expireAfterSeconds=0)
+    except Exception:
+        pass
+
+def _save_pending(email: str, user_doc: dict):
+    expires_at = datetime.utcnow() + timedelta(minutes=15)
+    try:
+        _pending_col().replace_one(
+            {"email": email},
+            {"email": email, "user_doc": user_doc, "expires_at": expires_at},
+            upsert=True
+        )
+    except Exception as e:
+        print(f"[PENDING] MongoDB write failed: {e}")
+
+def _get_pending(email: str) -> dict | None:
+    try:
+        doc = _pending_col().find_one({"email": email})
+        return doc
+    except Exception:
+        return None
+
+def _delete_pending(email: str):
+    try:
+        _pending_col().delete_one({"email": email})
+    except Exception:
+        pass
 
 # ── App Setup ─────────────────────────────────────────────────────────────────
 app = FastAPI(title="Enterprise AI Platform", version="2.0.0")
@@ -84,10 +123,12 @@ async def startup_event():
 
 async def _deferred_startup():
     """Run all startup work in the background so the event loop stays responsive."""
-    await asyncio.sleep(1)  # yield to let uvicorn finish binding
+    await asyncio.sleep(1)
 
     try:
         await asyncio.to_thread(ensure_indexes)
+        await asyncio.to_thread(_ensure_otp_index)      # TTL index on otp_store
+        await asyncio.to_thread(_ensure_pending_index)  # TTL index on pending_registrations
         print("[DB] MongoDB indexes ensured.")
     except Exception as e:
         print(f"[DB] MongoDB not available: {e}. System will continue with limited functionality.")
@@ -230,7 +271,7 @@ class ResendOtpRequest(BaseModel):
 
 @app.post("/auth/register", status_code=201)
 async def register(body: RegisterRequest):
-    # Validation
+    # ── Validation ───────────────────────────────────────────────────────
     if len(body.username.strip()) < 3:
         raise HTTPException(400, "Username must be at least 3 characters.")
     if len(body.password) < 6:
@@ -242,56 +283,96 @@ async def register(body: RegisterRequest):
     if len(body.phone.strip()) < 7:
         raise HTTPException(400, "A valid phone number is required.")
 
-    # Check uniqueness
+    email = body.email.lower().strip()
+    username = body.username.strip()
+
+    # ── Uniqueness: check verified DB accounts AND pending store ─────────
     try:
-        if users_col().find_one({"username": body.username}):
-            raise HTTPException(409, "Username already exists.")
-        if users_col().find_one({"email": body.email.lower()}):
-            raise HTTPException(409, "Email already registered.")
+        if users_col().find_one({"username": username, "verified": True}):
+            raise HTTPException(409, "Username already taken.")
+        if users_col().find_one({"email": email, "verified": True}):
+            raise HTTPException(409, "Email already registered with a verified account.")
+        # Clean up any old unverified DB records for this email
+        users_col().delete_many({"email": email, "verified": False})
     except HTTPException:
         raise
     except Exception as e:
-        reset_client()  # force fresh connection on next request
+        reset_client()
         raise HTTPException(503, f"Database unavailable: {str(e)}")
 
-    # Create user (unverified)
+    # Also check pending store (duplicate concurrent registrations)
+    existing_pending = _get_pending(email)
+    if existing_pending:
+        # Allow re-registration: overwrite the pending record & resend OTP
+        pass  # falls through to generate new OTP below
+
+    # ── Store in MongoDB pending (NOT users_col) until OTP verified ───────
     user_doc = {
-        "username": body.username.strip(),
-        "email": body.email.lower().strip(),
+        "username": username,
+        "email": email,
         "phone": body.phone.strip(),
         "password": hash_password(body.password),
         "role": body.role,
         "verified": False,
-        "created_at": datetime.utcnow().isoformat()
+        "created_at": datetime.utcnow().isoformat(),
     }
-    try:
-        users_col().insert_one(user_doc)
-    except Exception as e:
-        raise HTTPException(500, f"Failed to create user: {str(e)}")
+    _save_pending(email, user_doc)
 
-    # Generate & send OTP
-    otp = generate_otp(body.email.lower().strip())
-    send_otp_email(body.email.lower().strip(), otp, body.username)
+    # ── Generate & send OTP ───────────────────────────────────────────────
+    otp = generate_otp(email)
+    send_otp_email(email, otp, username)
 
     return {
-        "message": "Registration successful. Check your email (or console) for the OTP.",
-        "email": body.email.lower().strip()
+        "message": "OTP sent to your email. Please verify within 10 minutes to complete registration.",
+        "email": email,
     }
 
 
 @app.post("/auth/verify-otp")
 async def verify_otp_route(body: VerifyOtpRequest):
     email = body.email.lower().strip()
-    if not verify_otp(email, body.otp.strip()):
-        raise HTTPException(400, "Invalid or expired OTP. Please request a new one.")
+    otp_input = body.otp.strip()
 
-    try:
-        users_col().update_one(
-            {"email": email},
-            {"$set": {"verified": True, "verified_at": datetime.utcnow().isoformat()}}
-        )
-    except Exception as e:
-        raise HTTPException(500, f"Failed to activate account: {str(e)}")
+    success, err = verify_otp(email, otp_input)
+
+    if not success:
+        if err == "not_found":
+            raise HTTPException(400, "OTP not found. Please request a new one.")
+        elif err == "expired":
+            raise HTTPException(400, "OTP has expired. Please request a new one.")
+        elif err == "max_attempts":
+            raise HTTPException(400, "Too many incorrect attempts. Please request a new OTP.")
+        elif err.startswith("invalid:"):
+            remaining = err.split(":")[1]
+            raise HTTPException(400, f"Invalid OTP. {remaining} attempt(s) remaining.")
+        else:
+            raise HTTPException(400, "Invalid OTP. Please try again.")
+
+    # ── OTP correct — move from pending → users_col ───────────────────────
+    pending = _get_pending(email)
+
+    if pending:
+        user_doc = pending["user_doc"]
+        user_doc["verified"] = True
+        user_doc["verified_at"] = datetime.utcnow().isoformat()
+        try:
+            users_col().replace_one({"email": email}, user_doc, upsert=True)
+        except Exception as e:
+            raise HTTPException(500, f"Failed to save account: {str(e)}")
+        _delete_pending(email)
+    else:
+        # Fallback: pending expired but user exists in DB as unverified
+        try:
+            result = users_col().update_one(
+                {"email": email},
+                {"$set": {"verified": True, "verified_at": datetime.utcnow().isoformat()}},
+            )
+            if result.matched_count == 0:
+                raise HTTPException(404, "Registration session expired. Please register again.")
+        except HTTPException:
+            raise
+        except Exception as e:
+            raise HTTPException(500, f"Failed to activate account: {str(e)}")
 
     return {"message": "Account verified successfully. You can now login."}
 
@@ -299,15 +380,61 @@ async def verify_otp_route(body: VerifyOtpRequest):
 @app.post("/auth/resend-otp")
 async def resend_otp(body: ResendOtpRequest):
     email = body.email.lower().strip()
-    user = users_col().find_one({"email": email})
+
+    # Check pending store (primary path)
+    pending = _get_pending(email)
+    if pending:
+        username = pending["user_doc"].get("username", "User")
+        otp = generate_otp(email)
+        send_otp_email(email, otp, username)
+        return {"message": "New OTP sent to your email."}
+
+    # Fallback: check DB for unverified (edge case after pending TTL expires)
+    try:
+        user = users_col().find_one({"email": email})
+    except Exception as e:
+        raise HTTPException(503, f"Database unavailable: {str(e)}")
+
     if not user:
-        raise HTTPException(404, "Email not found.")
+        raise HTTPException(404, "Email not found. Please register first.")
     if user.get("verified"):
-        raise HTTPException(400, "Account is already verified.")
+        raise HTTPException(400, "Account already verified. Please login.")
 
     otp = generate_otp(email)
     send_otp_email(email, otp, user.get("username", "User"))
-    return {"message": "New OTP sent. Check your email or console."}
+    return {"message": "New OTP sent to your email."}
+
+
+@app.get("/auth/debug-email")
+async def debug_email(secret: str = ""):
+    """Diagnostic: tests email delivery config. Pass ?secret=debug123."""
+    if secret != "debug123":
+        raise HTTPException(403, "Forbidden")
+    import smtplib
+    smtp_user = os.getenv("SMTP_USER", "NOT SET")
+    smtp_pass = os.getenv("SMTP_PASS", "")
+    result = {
+        "smtp_user": smtp_user,
+        "smtp_pass_configured": bool(smtp_pass),
+        "resend_key_configured": bool(os.getenv("RESEND_API_KEY", "")),
+        "port_465_test": "not attempted",
+        "port_587_test": "not attempted",
+    }
+    if smtp_user != "NOT SET" and smtp_pass:
+        try:
+            with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=10) as s:
+                s.login(smtp_user, smtp_pass)
+            result["port_465_test"] = "LOGIN OK"
+        except Exception as e:
+            result["port_465_test"] = f"FAILED: {e}"
+        try:
+            with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as s:
+                s.starttls()
+                s.login(smtp_user, smtp_pass)
+            result["port_587_test"] = "LOGIN OK"
+        except Exception as e:
+            result["port_587_test"] = f"FAILED: {e}"
+    return result
 
 
 @app.post("/auth/login")
