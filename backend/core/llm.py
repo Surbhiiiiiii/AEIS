@@ -6,7 +6,7 @@ from groq import Groq
 # Groq client — reads GROQ_API_KEY from environment
 # ---------------------------------------------------------------------------
 _client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-MODEL = "llama-3.1-8b-instant"
+MODEL = "llama-3.3-70b-versatile"
 
 
 def query_llm(prompt: str) -> str:
@@ -17,9 +17,19 @@ def query_llm(prompt: str) -> str:
     try:
         response = _client.chat.completions.create(
             model=MODEL,
-            messages=[{"role": "user", "content": prompt}],
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You are an enterprise AI assistant that outputs ONLY valid JSON. "
+                        "Never include markdown, backticks, or explanatory text outside the JSON. "
+                        "Always follow the exact schema requested in the user prompt."
+                    )
+                },
+                {"role": "user", "content": prompt}
+            ],
             temperature=0.2,
-            max_tokens=1024,
+            max_tokens=2048,
         )
         return response.choices[0].message.content or ""
 

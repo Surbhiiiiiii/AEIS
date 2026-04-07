@@ -447,6 +447,28 @@ async def get_dashboard(current_user: dict = Depends(get_current_user)):
             "duration": f"{round(h.get('duration', 0), 1)}s"
         })
 
+    # ── Fetch latest meta-intelligence session metrics ────────────────────
+    latest_meta_insights = None
+    try:
+        memory = Memory()
+        events = memory.get_events()
+        # Find the most recent PerformanceEvaluation event
+        for event in reversed(events):
+            if event.get("agent") == "Meta-PerformanceEvaluation":
+                perf = event.get("details", {})
+                latest_meta_insights = {
+                    "performance": perf,
+                    "prompts_optimized": any(
+                        e.get("agent") == "Meta-PromptOptimization" for e in events
+                    ),
+                    "strategy_updated": any(
+                        e.get("agent") == "Meta-StrategyOptimization" for e in events
+                    )
+                }
+                break
+    except Exception:
+        pass
+
     return {
         "metrics": {
             "total_incidents": total_incidents,
@@ -456,7 +478,8 @@ async def get_dashboard(current_user: dict = Depends(get_current_user)):
         },
         "trends": {"chart": trend_chart, "distribution": trend_distribution},
         "incidents": incidents,
-        "history": history_data[:10]
+        "history": history_data[:10],
+        "meta_insights": latest_meta_insights
     }
 
 
@@ -508,6 +531,30 @@ async def get_admin_prompts(current_user: dict = Depends(get_current_user)):
     memory = Memory()
     return memory.get_prompts()
 
+
+@app.get("/admin/meta-insights")
+async def get_admin_meta_insights(current_user: dict = Depends(get_current_user)):
+    """Returns the latest meta-intelligence session metrics (admin only)."""
+    if current_user.get("role") != "admin":
+        raise HTTPException(403, "Admin access required")
+    try:
+        memory = Memory()
+        events = memory.get_events()
+        for event in reversed(events):
+            if event.get("agent") == "Meta-PerformanceEvaluation":
+                perf = event.get("details", {})
+                return {
+                    "performance": perf,
+                    "prompts_optimized": any(
+                        e.get("agent") == "Meta-PromptOptimization" for e in events
+                    ),
+                    "strategy_updated": any(
+                        e.get("agent") == "Meta-StrategyOptimization" for e in events
+                    )
+                }
+        return None
+    except Exception as e:
+        raise HTTPException(500, f"Could not fetch meta-insights: {e}")
 
 @app.get("/admin/agent-performance")
 async def get_agent_performance(current_user: dict = Depends(get_current_user)):

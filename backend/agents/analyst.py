@@ -52,10 +52,15 @@ class AnalystAgent:
 
         # ── 1. Guard: require real data or a meaningful goal ──────────────
         if not custom_data and not url:
-            # Use the goal text itself as content to give a meaningful analysis
+            # No file or URL supplied — treat the goal text itself as the incident description
+            # and build a rich text block so the LLM has something real to reason about
             custom_data = {
                 "type": "text",
-                "data": [goal],
+                "data": [
+                    f"INCIDENT DESCRIPTION (user-supplied goal): {goal}",
+                    "NOTE: No dataset or URL was provided. Perform a root-cause analysis based solely on the incident description above.",
+                    "Extract any implied symptoms, affected systems, and potential causes from the text."
+                ],
                 "stats": {"total_rows": 1, "columns": []}
             }
             messages = [goal]
@@ -150,40 +155,48 @@ class AnalystAgent:
                 pass
 
         # ── 7. Build LLM prompt ────────────────────────────────────────────
-        combined_report = " || ".join(reports)[:4000]
+        combined_report = " || ".join(reports)[:6000]
 
         system_prompt = self._get_prompt()
         prompt = f"""{system_prompt}
 
-=== STRUCTURED DATA SUMMARY ===
+You are analysing an enterprise operations situation. Use ALL context below to infer root causes.
+If no dataset is provided, reason from the incident description and domain knowledge.
+Do NOT say "cannot be determined" or "not identified" — always make a best-effort inference.
+
+=== INCIDENT / DATA SUMMARY ===
 {combined_report}
 
-=== TOP FREQUENT TERMS (word frequency count) ===
+=== TOP FREQUENT TERMS (word frequency) ===
 {keyword_summary[:800] if keyword_summary else "No significant terms detected."}
 
-=== RETRIEVED MEMORY CONTEXT ===
-{rag_context[:1500]}
+=== RETRIEVED MEMORY / RAG CONTEXT ===
+{rag_context[:1500] if rag_context else "No additional context retrieved."}
 
 {past_insights}
 
-=== TASK CONTEXT ===
+=== TASK ===
 Goal  : {str(goal)[:400]}
 Tasks : {json.dumps(list(tasks)[:5])}
 
 ---
-CRITICAL INSTRUCTION:
-Return ONLY a valid JSON object. No markdown. No explanations. No text before or after JSON.
+INSTRUCTIONS:
+1. Identify the single most likely root cause based on the data above.
+2. If the description mentions multiple issues (database errors, refund delays, app crashes), treat them as symptoms and identify the ONE underlying cause linking them.
+3. Assign severity: Low / Medium / High based on business impact.
+4. Provide 3 specific, actionable insights — not generic advice.
+5. Output ONLY a valid JSON object. No markdown. No text outside the JSON.
 
-Required JSON format:
+Required schema:
 {{
-  "major_issue": "concise description of the main operational problem found",
-  "root_cause": "the primary underlying cause based on data",
+  "major_issue": "concise description of the primary operational problem",
+  "root_cause": "the single most likely underlying cause (be specific, e.g. 'connection pool exhaustion due to unbounded query growth')",
   "severity": "Low|Medium|High",
-  "recommended_action": "specific, actionable recommendation",
+  "recommended_action": "the most impactful immediate action to take",
   "insights": [
-    "data-driven insight 1",
-    "data-driven insight 2",
-    "data-driven insight 3"
+    "specific insight 1 with evidence from the data",
+    "specific insight 2 with evidence from the data",
+    "specific insight 3 with evidence from the data"
   ]
 }}
 """
